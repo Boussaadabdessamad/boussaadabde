@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdessamad Boussaadah — Ingénieur Excellence Opérationnelle & Amélioration Continue</title>
+  <meta name="description" content="Abdessamad Boussaadah — Ingénieur en Excellence Opérationnelle et Amélioration Continue (Lean 6 Sigma). Génie industriel, industrialisation, ingénierie mécanique. CESI, Grenoble INP, ENSAM Rabat." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #141d29;   /* bleu marine Safran  */
+      --navy2:     #1d2a3a;
+      --sky:       #2f9fe0;   /* bleu ciel accent    */
+      --sky-dark:  #1a7fbd;
+      --sky-soft:  #eaf5fc;
+      --bg:        #ffffff;
+      --bg2:       #f6f8fa;   /* blanc cassé         */
+      --bg3:       #eef2f6;
+      --text:      #141d29;
+      --muted:     #5a6470;
+      --muted2:    #8a939e;
+      --border:    #e2e8ef;
+      --display:   'Archivo', sans-serif;
+      --body:      'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    /* ── Background industriel animé (filigrane global) ── */
+    #bg-net {
+      position: fixed; inset: 0; z-index: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+    }
+    /* le contenu passe au-dessus du canvas */
+    nav, section, footer, .edu-modal-overlay { position: relative; z-index: 1; }
+    nav { z-index: 100; }
+    .edu-modal-overlay { z-index: 200; }
+
+    body {
+      font-family: var(--body);
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg2); }
+    ::-webkit-scrollbar-thumb { background: var(--sky); border-radius: 4px; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 3rem;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: padding .3s, box-shadow .3s;
+    }
+    nav.scrolled { padding: .7rem 3rem; box-shadow: 0 4px 24px rgba(20,29,41,.06); }
+    .nav-logo {
+      font-family: var(--display);
+      font-size: 1rem; font-weight: 800;
+      color: var(--navy); text-decoration: none;
+      letter-spacing: -.01em; display: flex; align-items: center; gap: .6rem;
+      white-space: nowrap;
+    }
+    .nav-logo .mark {
+      width: 30px; height: 30px; border-radius: 7px;
+      background: var(--navy); color: #fff;
+      display: grid; place-items: center;
+      font-size: .85rem; font-weight: 800;
+      box-shadow: inset 0 0 0 2px var(--sky);
+    }
+    .nav-right { display: flex; align-items: center; gap: 2rem; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: .82rem; font-weight: 600;
+      color: var(--muted); text-decoration: none;
+      letter-spacing: .03em; text-transform: uppercase;
+      transition: color .2s; position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -6px; left: 0;
+      width: 0; height: 2px; background: var(--sky);
+      transition: width .25s;
+    }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .lang-switch {
+      display: flex; border: 1px solid var(--border); border-radius: 999px;
+      overflow: hidden; font-family: var(--display); font-size: .72rem; font-weight: 700;
+    }
+    .lang-switch button {
+      background: none; border: none; cursor: pointer;
+      padding: .35rem .75rem; color: var(--muted2);
+      letter-spacing: .04em; transition: background .2s, color .2s;
+    }
+    .lang-switch button.active { background: var(--navy); color: #fff; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); transition: all .3s; }
+
+    section { position: relative; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 7rem 3rem 4rem;
+      background:
+        radial-gradient(ellipse 60% 50% at 80% 0%, rgba(47,159,224,.12), transparent 60%),
+        rgba(255,255,255,.78);
+      position: relative; overflow: hidden;
+    }
+    /* fines lignes "trajectoire" en fond */
+    #hero::before {
+      content: ''; position: absolute; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(rgba(20,29,41,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20,29,41,.025) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 80%);
+    }
+    .hero-inner {
+      max-width: 1180px; margin: 0 auto; width: 100%;
+      display: grid; grid-template-columns: 1.4fr auto;
+      gap: 5rem; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: .6rem;
+      font-family: var(--display); font-size: .76rem; font-weight: 700;
+      color: var(--sky-dark); background: var(--sky-soft);
+      border: 1px solid rgba(47,159,224,.25);
+      padding: .4rem 1rem; border-radius: 999px;
+      letter-spacing: .05em; text-transform: uppercase;
+      margin-bottom: 1.8rem; animation: fadeUp .6s ease both;
+    }
+    .hero-tag .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--sky); animation: pulse 2s infinite; }
+
+    h1.hero-name {
+      font-family: var(--display);
+      font-size: clamp(2.6rem, 6vw, 4.8rem);
+      font-weight: 900; line-height: 1.02;
+      letter-spacing: -.03em; color: var(--navy);
+      animation: fadeUp .6s .1s ease both;
+    }
+    h1.hero-name .accent { color: var(--sky); }
+
+    .hero-role {
+      font-family: var(--display);
+      font-size: clamp(1.05rem, 2.4vw, 1.5rem);
+      font-weight: 600; color: var(--muted);
+      margin: 1.1rem 0 0; min-height: 1.6em;
+      animation: fadeUp .6s .2s ease both;
+    }
+    #typed-text { color: var(--navy); border-right: 2px solid var(--sky); padding-right: 3px; }
+
+    .hero-desc {
+      max-width: 560px; margin: 1.6rem 0 2.4rem;
+      color: var(--muted); font-size: 1.02rem; line-height: 1.75;
+      text-align: justify; text-justify: inter-word;
+      animation: fadeUp .6s .3s ease both;
+    }
+    .hero-desc strong { color: var(--navy); font-weight: 600; }
+
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp .6s .4s ease both; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .55rem;
+      padding: .85rem 1.7rem; border-radius: 8px;
+      font-family: var(--display); font-size: .88rem; font-weight: 700;
+      text-decoration: none; transition: all .25s; cursor: pointer; border: none;
+      letter-spacing: .01em;
+    }
+    .btn-primary { background: var(--navy); color: #fff; }
+    .btn-primary:hover { background: var(--sky); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(47,159,224,.3); }
+    .btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--border); }
+    .btn-outline:hover { border-color: var(--sky); color: var(--sky-dark); transform: translateY(-2px); }
+
+    /* Stats chiffrées */
+    .hero-stats {
+      display: flex; gap: 2.8rem; flex-wrap: wrap; margin-top: 3rem;
+      animation: fadeUp .6s .5s ease both;
+    }
+    .stat { position: relative; }
+    .stat + .stat::before {
+      content: ''; position: absolute; left: -1.4rem; top: 50%; transform: translateY(-50%);
+      width: 1px; height: 70%; background: var(--border);
+    }
+    .stat-n {
+      font-family: var(--display); font-size: 2.1rem; font-weight: 900;
+      color: var(--navy); line-height: 1; letter-spacing: -.02em;
+    }
+    .stat-n .stat-u { font-size: 1rem; font-weight: 700; color: var(--sky-dark); }
+    .stat-l { font-size: .78rem; color: var(--muted); margin-top: .45rem; max-width: 150px; line-height: 1.35; }
+
+    /* Photo */
+    .hero-photo-wrap { position: relative; flex-shrink: 0; align-self: center; }
+    .hero-photo-wrap::before {
+      content: ''; position: absolute; inset: -14px -14px 14px 14px;
+      border: 2px solid var(--sky); border-radius: 16px; z-index: 0;
+    }
+    .hero-photo {
+      width: 300px; height: 380px; border-radius: 14px;
+      object-fit: cover; object-position: center;
+      position: relative; z-index: 1;
+      box-shadow: 0 24px 60px rgba(20,29,41,.18);
+      display: block; background: var(--bg3);
+    }
+    .hero-photo-placeholder {
+      width: 300px; height: 380px; border-radius: 14px;
+      position: relative; z-index: 1;
+      background: linear-gradient(160deg, var(--navy), var(--navy2));
+      display: grid; place-items: center; color: var(--sky);
+      box-shadow: 0 24px 60px rgba(20,29,41,.18);
+      text-align: center; padding: 2rem;
+    }
+    .hero-photo-placeholder i { font-size: 3rem; margin-bottom: 1rem; opacity: .6; }
+    .hero-photo-placeholder span { font-family: var(--display); font-size: .8rem; color: #fff; opacity: .55; line-height: 1.5; }
+
+    .scroll-hint {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      color: var(--muted2); font-size: .72rem; text-transform: uppercase; letter-spacing: .15em;
+      font-family: var(--display); font-weight: 600;
+      display: flex; flex-direction: column; align-items: center; gap: .5rem;
+      animation: bounce 2.2s infinite; z-index: 1;
+    }
+
+    /* ── SECTION COMMON ── */
+    .section-wrap { max-width: 1180px; margin: 0 auto; padding: 6.5rem 3rem; }
+    .section-eyebrow {
+      font-family: var(--display); font-size: .78rem; font-weight: 700;
+      color: var(--sky-dark); text-transform: uppercase; letter-spacing: .14em;
+      display: flex; align-items: center; gap: .7rem; margin-bottom: 1rem;
+    }
+    .section-eyebrow::before { content: ''; width: 28px; height: 2px; background: var(--sky); }
+    .section-title {
+      font-family: var(--display);
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
+      font-weight: 800; letter-spacing: -.02em; color: var(--navy);
+      margin-bottom: 3rem; line-height: 1.1;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: rgba(246,248,250,.9); }
+    .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 4rem; align-items: start; }
+    .about-text p { color: var(--muted); line-height: 1.85; margin-bottom: 1.2rem; font-size: 1.01rem; text-align: justify; text-justify: inter-word; }
+    .about-text strong { color: var(--navy); font-weight: 600; }
+    .about-contacts { display: flex; flex-direction: column; gap: .75rem; margin-top: 2rem; }
+    .contact-item {
+      display: flex; align-items: center; gap: .85rem;
+      font-size: .92rem; color: var(--muted); text-decoration: none; transition: color .2s;
+    }
+    .contact-item:hover { color: var(--sky-dark); }
+    .contact-icon {
+      width: 40px; height: 40px; border-radius: 9px;
+      background: #fff; border: 1px solid var(--border);
+      display: grid; place-items: center; color: var(--sky-dark); flex-shrink: 0;
+    }
+
+    .about-right { display: flex; flex-direction: column; gap: 1rem; }
+    .info-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.4rem 1.5rem;
+      transition: border-color .25s, transform .25s, box-shadow .25s;
+    }
+    .info-card:hover { border-color: var(--sky); transform: translateX(4px); box-shadow: 0 8px 24px rgba(20,29,41,.06); }
+    .info-card-head { display: flex; align-items: center; gap: .7rem; font-family: var(--display); font-weight: 700; font-size: .98rem; margin-bottom: .5rem; color: var(--navy); }
+    .info-card-head i { color: var(--sky-dark); width: 20px; }
+    .info-card p { color: var(--muted); font-size: .88rem; line-height: 1.65; }
+
+    /* ── EXPERIENCE ── */
+    #experience { background: rgba(255,255,255,.86); }
+    .timeline { position: relative; }
+    .timeline::before {
+      content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px;
+      width: 2px; background: linear-gradient(180deg, var(--sky), var(--border));
+    }
+    .tl-item { padding-left: 2.6rem; margin-bottom: 2.2rem; position: relative; }
+    .tl-dot {
+      position: absolute; left: 0; top: 8px;
+      width: 16px; height: 16px; border-radius: 50%;
+      background: #fff; border: 3px solid var(--sky);
+      box-shadow: 0 0 0 4px var(--bg);
+    }
+    .tl-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.8rem 2rem;
+      transition: border-color .25s, transform .25s, box-shadow .25s;
+    }
+    .tl-card:hover { border-color: var(--sky); transform: translateX(6px); box-shadow: 0 14px 36px rgba(20,29,41,.07); }
+    .tl-head { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: nowrap; gap: 1rem; margin-bottom: .35rem; }
+    .tl-head-left { display: flex; flex-direction: column; gap: .4rem; align-items: flex-start; min-width: 0; }
+    .tl-logo {
+      flex-shrink: 0; width: 96px; height: 70px; border-radius: 8px;
+      background: #fff; border: 1px solid var(--border);
+      display: grid; place-items: center; overflow: hidden; padding: 8px;
+    }
+    .tl-logo img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+    .detail-logo {
+      position: absolute; top: 1.5rem; right: 4.4rem;
+      width: 104px; height: 76px; border-radius: 9px;
+      background: #fff; border: 1px solid rgba(255,255,255,.3);
+      display: grid; place-items: center; overflow: hidden; padding: 9px;
+    }
+    .detail-logo:empty { display: none; }
+    .detail-logo img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+    .tl-company { font-family: var(--display); font-size: 1.2rem; font-weight: 800; color: var(--navy); }
+    .tl-date {
+      font-family: var(--display); font-size: .76rem; font-weight: 700; color: var(--sky-dark);
+      background: var(--sky-soft); border: 1px solid rgba(47,159,224,.2);
+      padding: .25rem .8rem; border-radius: 999px; white-space: nowrap; letter-spacing: .03em;
+    }
+    .tl-role { font-size: .95rem; color: var(--navy); font-weight: 600; margin-bottom: .25rem; }
+    .tl-loc { font-size: .82rem; color: var(--muted2); margin-bottom: 1rem; }
+    .tl-loc i { margin-right: .35rem; color: var(--sky-dark); }
+    .tl-items { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+    .tl-items li { font-size: .9rem; color: var(--muted); padding-left: 1.4rem; position: relative; line-height: 1.65; }
+    .tl-items li::before { content: ''; position: absolute; left: 0; top: .55em; width: 6px; height: 6px; border-radius: 1px; background: var(--sky); }
+    .tl-items strong { color: var(--navy); font-weight: 600; }
+
+    /* ── PROJECTS ── */
+    #projects { background: rgba(246,248,250,.9); }
+    .proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    .proj-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.9rem;
+      transition: border-color .25s, transform .25s, box-shadow .25s;
+      display: flex; flex-direction: column; position: relative; overflow: hidden;
+    }
+    .proj-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--sky); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
+    .proj-card:hover::before { transform: scaleX(1); }
+    .proj-card:hover { border-color: var(--sky); transform: translateY(-6px); box-shadow: 0 22px 44px rgba(20,29,41,.1); }
+    .proj-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.1rem; }
+    .proj-icon {
+      width: 48px; height: 48px; border-radius: 11px;
+      background: var(--sky-soft); border: 1px solid rgba(47,159,224,.2);
+      display: grid; place-items: center; color: var(--sky-dark); font-size: 1.2rem;
+    }
+    .proj-year { font-family: var(--display); font-size: .76rem; font-weight: 600; color: var(--muted2); }
+    .proj-name { font-family: var(--display); font-size: 1.12rem; font-weight: 700; margin-bottom: .55rem; color: var(--navy); line-height: 1.25; }
+    .proj-desc { font-size: .88rem; color: var(--muted); line-height: 1.7; flex: 1; margin-bottom: 1.3rem; }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: .45rem; }
+    .tag {
+      font-family: var(--display); font-size: .72rem; font-weight: 600;
+      padding: .25rem .7rem; border-radius: 6px;
+      background: var(--bg3); border: 1px solid var(--border); color: var(--muted);
+    }
+    .tag.sky { background: var(--sky-soft); border-color: rgba(47,159,224,.25); color: var(--sky-dark); }
+
+    /* ── SKILLS ── */
+    #skills { background: rgba(255,255,255,.86); }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .skill-cat {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.7rem; transition: border-color .25s, box-shadow .25s;
+    }
+    .skill-cat:hover { border-color: var(--sky); box-shadow: 0 12px 30px rgba(20,29,41,.06); }
+    .skill-cat-head { display: flex; align-items: center; gap: .7rem; font-family: var(--display); font-weight: 700; font-size: 1rem; margin-bottom: 1.2rem; color: var(--navy); }
+    .skill-cat-head i { color: var(--sky-dark); }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .stag {
+      font-size: .82rem; font-family: var(--body); font-weight: 500;
+      padding: .35rem .8rem; border-radius: 7px;
+      background: #fff; border: 1px solid var(--border); color: var(--text); transition: all .2s;
+    }
+    .stag:hover { border-color: var(--sky); color: var(--sky-dark); }
+    .stag.highlight { background: var(--sky-soft); border-color: rgba(47,159,224,.3); color: var(--sky-dark); font-weight: 600; }
+
+    /* ── EDUCATION ── */
+    #education { background: rgba(246,248,250,.9); }
+    .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .edu-hint { font-size: .85rem; color: var(--muted2); margin-bottom: 1.5rem; display: flex; align-items: center; gap: .5rem; }
+    .edu-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.9rem;
+      transition: border-color .25s, transform .25s, box-shadow .25s;
+      position: relative; cursor: pointer; outline: none; padding-bottom: 2.6rem;
+    }
+    .edu-card:hover, .edu-card:focus-visible { border-color: var(--sky); transform: translateY(-4px); box-shadow: 0 14px 34px rgba(20,29,41,.08); }
+    .edu-card:focus-visible { box-shadow: 0 0 0 3px rgba(47,159,224,.35); }
+    .edu-year {
+      font-family: var(--display); font-size: .76rem; font-weight: 700; color: var(--sky-dark);
+      background: var(--sky-soft); padding: .25rem .7rem; border-radius: 999px;
+      display: inline-block; margin-bottom: 1rem; letter-spacing: .03em;
+    }
+    .edu-school { font-family: var(--display); font-size: 1.1rem; font-weight: 800; margin-bottom: .35rem; color: var(--navy); }
+    .edu-degree { font-size: .9rem; color: var(--muted); font-weight: 500; margin-bottom: .4rem; line-height: 1.5; }
+    .edu-loc { font-size: .82rem; color: var(--muted2); }
+    .edu-loc i { margin-right: .35rem; color: var(--sky-dark); }
+    .edu-more {
+      position: absolute; bottom: 1.4rem; right: 1.6rem;
+      width: 30px; height: 30px; border-radius: 50%;
+      background: var(--sky-soft); color: var(--sky-dark);
+      display: grid; place-items: center; font-size: .8rem;
+      transition: background .25s, color .25s, transform .25s;
+    }
+    .edu-card:hover .edu-more, .edu-card:focus-visible .edu-more { background: var(--sky); color: #fff; transform: translateX(3px); }
+
+    /* ── MODALE FORMATION ── */
+    .edu-modal-overlay {
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(20,29,41,.55); backdrop-filter: blur(4px);
+      display: none; align-items: center; justify-content: center; padding: 1.5rem;
+      opacity: 0; transition: opacity .25s;
+    }
+    .edu-modal-overlay.open { display: flex; opacity: 1; }
+    .edu-modal {
+      background: #fff; border-radius: 18px; width: 100%; max-width: 640px;
+      max-height: 88vh; overflow-y: auto; position: relative;
+      box-shadow: 0 30px 80px rgba(20,29,41,.35);
+      transform: translateY(20px) scale(.97); transition: transform .3s;
+    }
+    .edu-modal-overlay.open .edu-modal { transform: translateY(0) scale(1); }
+    .edu-modal-close {
+      position: absolute; top: 1.1rem; right: 1.1rem;
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--bg2); border: 1px solid var(--border); color: var(--navy);
+      cursor: pointer; font-size: 1rem; display: grid; place-items: center;
+      transition: background .2s, color .2s; z-index: 2;
+    }
+    .edu-modal-close:hover { background: var(--navy); color: #fff; }
+    .edu-modal-head {
+      background: linear-gradient(150deg, var(--navy), var(--navy2));
+      color: #fff; padding: 2.2rem 2.2rem 1.8rem; border-radius: 18px 18px 0 0;
+    }
+    .edu-modal-year {
+      font-family: var(--display); font-size: .74rem; font-weight: 700; color: var(--navy);
+      background: var(--sky); padding: .25rem .7rem; border-radius: 999px;
+      display: inline-block; margin-bottom: .9rem; letter-spacing: .03em;
+    }
+    .edu-modal-school { font-family: var(--display); font-size: 1.5rem; font-weight: 800; margin-bottom: .4rem; line-height: 1.15; }
+    /* espace pour le logo dans la modale détail */
+    #detailModal .edu-modal-head { padding-right: 9rem; }
+    #detailModal .edu-modal-head:has(.detail-logo:empty) { padding-right: 2.2rem; }
+    .edu-modal-degree { font-size: .95rem; color: rgba(255,255,255,.8); line-height: 1.5; margin-bottom: .7rem; }
+    .edu-modal-loc { font-size: .82rem; color: var(--sky); }
+    .edu-modal-body { padding: 1.8rem 2.2rem 2.2rem; }
+    .edu-block { margin-bottom: 1.7rem; }
+    .edu-block:last-child { margin-bottom: 0; }
+    .edu-block-head {
+      font-family: var(--display); font-weight: 700; font-size: .95rem; color: var(--navy);
+      display: flex; align-items: center; gap: .6rem; margin-bottom: .9rem;
+    }
+    .edu-block-head i { color: var(--sky-dark); }
+    .edu-block ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+    .edu-block ul li { font-size: .88rem; color: var(--muted); padding-left: 1.3rem; position: relative; line-height: 1.6; }
+    .edu-block ul li::before { content: ''; position: absolute; left: 0; top: .55em; width: 6px; height: 6px; border-radius: 1px; background: var(--sky); }
+    .edu-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .edu-chips span {
+      font-family: var(--display); font-size: .78rem; font-weight: 600;
+      padding: .35rem .8rem; border-radius: 7px;
+      background: var(--sky-soft); border: 1px solid rgba(47,159,224,.25); color: var(--sky-dark);
+    }
+
+    /* cartes expérience / projet cliquables */
+    .tl-card, .proj-card { cursor: pointer; outline: none; }
+    .tl-card:focus-visible, .proj-card:focus-visible { box-shadow: 0 0 0 3px rgba(47,159,224,.35); border-color: var(--sky); }
+    .card-more {
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-family: var(--display); font-size: .76rem; font-weight: 700; color: var(--sky-dark);
+      margin-top: 1.1rem;
+    }
+    .card-more i { transition: transform .25s; }
+    .tl-card:hover .card-more i, .proj-card:hover .card-more i { transform: translateX(4px); }
+    .proj-card .card-more { margin-top: auto; }
+    /* badge "documents" sur les cartes */
+    .doc-count {
+      display: inline-flex; align-items: center; gap: .35rem;
+      font-family: var(--display); font-size: .7rem; font-weight: 700;
+      color: var(--sky-dark); background: var(--sky-soft);
+      border: 1px solid rgba(47,159,224,.2); border-radius: 999px;
+      padding: .15rem .6rem; margin-left: .5rem;
+    }
+
+    /* bloc documents dans la modale */
+    .edu-docs { display: flex; flex-direction: column; gap: .6rem; }
+    .edu-doc {
+      display: flex; align-items: center; gap: .9rem;
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 10px; padding: .8rem 1rem;
+      text-decoration: none; color: var(--navy);
+      transition: border-color .2s, transform .2s, background .2s;
+    }
+    .edu-doc:hover { border-color: var(--sky); transform: translateX(4px); background: var(--sky-soft); }
+    .edu-doc-icon {
+      width: 38px; height: 38px; border-radius: 9px; flex-shrink: 0;
+      display: grid; place-items: center; font-size: 1.05rem; color: #fff;
+    }
+    .edu-doc-icon.pdf { background: #d9453b; }
+    .edu-doc-icon.link { background: var(--sky); }
+    .edu-doc-icon.img { background: #2fae6a; }
+    .edu-doc-icon.doc { background: var(--navy); }
+    .edu-doc-txt { flex: 1; min-width: 0; }
+    .edu-doc-name { font-family: var(--display); font-weight: 700; font-size: .88rem; }
+    .edu-doc-sub { font-size: .76rem; color: var(--muted2); }
+    .edu-doc-go { color: var(--muted2); font-size: .85rem; }
+    .edu-doc:hover .edu-doc-go { color: var(--sky-dark); }
+    .edu-empty { font-size: .85rem; color: var(--muted2); font-style: italic; }
+
+    .certs-block { margin-top: 3.5rem; }
+    .certs-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.2rem; }
+    .cert-badge {
+      display: flex; align-items: center; gap: .85rem;
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 11px; padding: .9rem 1.3rem;
+      transition: border-color .25s, transform .2s;
+    }
+    .cert-badge:hover { border-color: var(--sky); transform: translateY(-2px); }
+    .cert-badge i { color: var(--sky-dark); font-size: 1.3rem; }
+    .cert-badge .ct { font-family: var(--display); font-weight: 700; font-size: .9rem; color: var(--navy); }
+    .cert-badge span { color: var(--muted); font-size: .78rem; display: block; }
+
+    /* ── CONTACT ── */
+    #contact { background: rgba(20,29,41,.92); color: #fff; }
+    #contact .section-eyebrow { color: var(--sky); }
+    #contact .section-eyebrow::before { background: var(--sky); }
+    #contact .section-title { color: #fff; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-link-card {
+      display: flex; align-items: center; gap: 1rem;
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 12px; padding: 1.2rem 1.4rem;
+      text-decoration: none; color: #fff; transition: border-color .25s, transform .2s, background .2s;
+    }
+    .contact-link-card:hover { border-color: var(--sky); transform: translateX(5px); background: rgba(47,159,224,.08); }
+    .clc-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: rgba(47,159,224,.15); border: 1px solid rgba(47,159,224,.3);
+      display: grid; place-items: center; color: var(--sky); font-size: 1.15rem; flex-shrink: 0;
+    }
+    .clc-label { font-size: .76rem; color: rgba(255,255,255,.5); font-family: var(--display); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+    .clc-val { font-weight: 600; font-size: .94rem; }
+    .contact-cta h3 { font-family: var(--display); font-size: 1.7rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.2; }
+    .contact-cta p { color: rgba(255,255,255,.65); line-height: 1.75; margin-bottom: 1rem; }
+    .contact-cta strong { color: #fff; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0e151f; text-align: center; padding: 2.2rem;
+      color: var(--muted2); font-size: .82rem; border-top: 1px solid rgba(255,255,255,.06);
+    }
+    footer span { color: var(--sky); font-family: var(--display); font-weight: 600; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .4; transform: scale(.8); } }
+    @keyframes bounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(7px); } }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.4rem; }
+      nav.scrolled { padding: .7rem 1.4rem; }
+      .logo-name { display: none; }
+      .nav-links {
+        display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0;
+        background: #fff; padding: 1.5rem 1.4rem; gap: 1.2rem; border-bottom: 1px solid var(--border);
+        box-shadow: 0 12px 24px rgba(20,29,41,.08);
+      }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+      .section-wrap { padding: 4.5rem 1.4rem; }
+      #hero { padding: 6rem 1.4rem 4rem; }
+      .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 2.5rem; }
+      .hero-content { order: 2; }
+      .hero-photo-wrap { order: 1; margin: 0 auto; }
+      .hero-photo, .hero-photo-placeholder { width: 220px; height: 280px; }
+      .hero-photo-wrap::before { inset: -10px -10px 10px 10px; }
+      .hero-cta { justify-content: center; }
+      .hero-stats { justify-content: center; gap: 1.6rem 2.8rem; }
+      .stat-l { max-width: 120px; }
+      .hero-desc { margin-left: auto; margin-right: auto; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="bg-net" aria-hidden="true"></canvas>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo"><span class="mark">AB</span> <span class="logo-name">Abdessamad Boussaadah</span></a>
+  <div class="nav-right">
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about" data-fr="Profil" data-en="About">Profil</a></li>
+      <li><a href="#experience" data-fr="Parcours" data-en="Experience">Parcours</a></li>
+      <li><a href="#projects" data-fr="Projets" data-en="Projects">Projets</a></li>
+      <li><a href="#skills" data-fr="Compétences" data-en="Skills">Compétences</a></li>
+      <li><a href="#education" data-fr="Formation" data-en="Education">Formation</a></li>
+      <li><a href="#contact" data-fr="Contact" data-en="Contact">Contact</a></li>
+    </ul>
+    <div class="lang-switch">
+      <button id="btn-fr" class="active" onclick="setLang('fr')">FR</button>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="dot"></span>
+        <span data-fr="Ouvert aux opportunités" data-en="Open to opportunities">Ouvert aux opportunités</span>
+      </div>
+      <h1 class="hero-name">Abdessamad<br/><span class="accent">Boussaadah</span></h1>
+      <div class="hero-role"><span id="typed-text"></span></div>
+      <p class="hero-desc"
+         data-fr="Ingénieur en <strong>Génie Industriel</strong> avec une expérience en amélioration continue, optimisation des processus, gestion de projet et transformation industrielle. Passionné par le <strong>Lean Management</strong>, l'analyse de données et la mise en œuvre de solutions innovantes permettant d'améliorer durablement la performance, la qualité et l'efficacité opérationnelle."
+         data-en="Engineer in <strong>Industrial Engineering</strong> with experience in continuous improvement, process optimization, project management and industrial transformation. Passionate about <strong>Lean Management</strong>, data analysis and the implementation of innovative solutions that sustainably improve performance, quality and operational efficiency.">
+        Ingénieur en <strong>Génie Industriel</strong> avec une expérience en amélioration continue, optimisation des processus, gestion de projet et transformation industrielle. Passionné par le <strong>Lean Management</strong>, l'analyse de données et la mise en œuvre de solutions innovantes permettant d'améliorer durablement la performance, la qualité et l'efficacité opérationnelle.
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> <span data-fr="Me contacter" data-en="Get in touch">Me contacter</span></a>
+        <a href="#experience" class="btn btn-outline"><i class="fas fa-briefcase"></i> <span data-fr="Mon parcours" data-en="My experience">Mon parcours</span></a>
+        <a href="mailto:boussaadabde@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i> <span data-fr="M'envoyer un mail" data-en="Email me">M'envoyer un mail</span></a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-n">+2 <span class="stat-u" data-fr="ans" data-en="yrs">ans</span></div>
+          <div class="stat-l" data-fr="Expérience stage &amp; alternance" data-en="Internship &amp; apprenticeship experience">Expérience stage &amp; alternance</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">+12</div>
+          <div class="stat-l" data-fr="Projets académiques réalisés" data-en="Academic projects completed">Projets académiques réalisés</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">4</div>
+          <div class="stat-l" data-fr="Diplômes &amp; échange international" data-en="Degrees &amp; international exchange">Diplômes &amp; échange international</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <img src="photo.jpg" alt="Abdessamad Boussaadah" class="hero-photo" />
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span data-fr="Découvrir" data-en="Scroll">Découvrir</span>
+    <i class="fas fa-chevron-down"></i>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-wrap">
+    <div class="section-eyebrow reveal" data-fr="Profil" data-en="About">Profil</div>
+    <h2 class="section-title reveal" data-fr="Qui je suis" data-en="Who I am">Qui je suis</h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p data-fr="Je suis <strong>ingénieur en Génie Industriel</strong>, actuellement en <strong>Mastère Spécialisé Manager de l'Amélioration Continue et de l'Excellence Opérationnelle</strong> à CESI École d'Ingénieurs, après une expérience d'échange international à <strong>Grenoble INP (École de Génie Industriel)</strong> en ingénierie de produits. Mon parcours s'appuie également sur une formation solide en mécanique, avec un <strong>DUT en Génie Mécanique et Productique</strong> ainsi qu'un <strong>diplôme d'ingénieur de l'ENSAM Rabat</strong>."
+           data-en="I'm an <strong>Industrial Engineering graduate</strong>, currently completing a <strong>Specialized Master's in Continuous Improvement &amp; Operational Excellence Management</strong> at CESI École d'Ingénieurs, following an international exchange at <strong>Grenoble INP (Industrial Engineering School)</strong> in product engineering. My background is also rooted in mechanics, with a <strong>two-year technical degree (DUT) in Mechanical Engineering &amp; Production</strong> and an <strong>engineering degree from ENSAM Rabat</strong>.">
+          Je suis <strong>ingénieur en Génie Industriel</strong>, actuellement en <strong>Mastère Spécialisé Manager de l'Amélioration Continue et de l'Excellence Opérationnelle</strong> à CESI École d'Ingénieurs, après une expérience d'échange international à <strong>Grenoble INP (École de Génie Industriel)</strong> en ingénierie de produits. Mon parcours s'appuie également sur une formation solide en mécanique, avec un <strong>DUT en Génie Mécanique et Productique</strong> ainsi qu'un <strong>diplôme d'ingénieur de l'ENSAM Rabat</strong>.
+        </p>
+        <p data-fr="Ce qui me motive avant tout, c'est de comprendre et d'optimiser la manière dont les différentes fonctions d'une organisation industrielle interagissent pour créer de la valeur. De la conception d'un produit à son industrialisation, de la gestion des opérations à l'amélioration continue, j'évolue avec aisance sur l'ensemble de la chaîne industrielle et apprécie particulièrement les projets transverses où technique, organisation et performance doivent s'aligner."
+           data-en="What drives me above all is understanding and optimizing how the different functions of an industrial organization interact to create value. From product design to industrialization, from operations management to continuous improvement, I move easily across the entire industrial chain and particularly enjoy cross-functional projects where engineering, organization and performance must align.">
+          Ce qui me motive avant tout, c'est de comprendre et d'optimiser la manière dont les différentes fonctions d'une organisation industrielle interagissent pour créer de la valeur. De la conception d'un produit à son industrialisation, de la gestion des opérations à l'amélioration continue, j'évolue avec aisance sur l'ensemble de la chaîne industrielle et apprécie particulièrement les projets transverses où technique, organisation et performance doivent s'aligner.
+        </p>
+        <p data-fr="Au cours de mes expériences académiques et professionnelles, j'ai contribué à des projets de conception, d'optimisation de processus, de gestion de production et de transformation industrielle. Ces expériences m'ont permis de développer une approche structurée, orientée résultats, basée sur l'analyse, l'innovation et l'amélioration continue."
+           data-en="Throughout my academic and professional experiences, I have contributed to projects in design, process optimization, production management and industrial transformation. These experiences allowed me to develop a structured, results-oriented approach based on analysis, innovation and continuous improvement.">
+          Au cours de mes expériences académiques et professionnelles, j'ai contribué à des projets de conception, d'optimisation de processus, de gestion de production et de transformation industrielle. Ces expériences m'ont permis de développer une approche structurée, orientée résultats, basée sur l'analyse, l'innovation et l'amélioration continue.
+        </p>
+        <p data-fr="J'ai également évolué dans des environnements multiculturels et techniques à travers mes expériences au Maroc et en France, ce qui m'a permis de renforcer mon adaptabilité et ma capacité à travailler sur des problématiques industrielles complexes et variées."
+           data-en="I have also worked in multicultural and technical environments across Morocco and France, strengthening my adaptability and my ability to tackle complex and varied industrial challenges.">
+          J'ai également évolué dans des environnements multiculturels et techniques à travers mes expériences au Maroc et en France, ce qui m'a permis de renforcer mon adaptabilité et ma capacité à travailler sur des problématiques industrielles complexes et variées.
+        </p>
+        <p data-fr="Passionné par l'industrie et les défis opérationnels, je m'intéresse aux méthodes, technologies et stratégies permettant d'améliorer durablement la performance des organisations, tout au long du cycle de vie des produits et des opérations."
+           data-en="Passionate about industry and operational challenges, I'm interested in the methods, technologies and strategies that sustainably improve organizational performance, throughout the life cycle of products and operations.">
+          Passionné par l'industrie et les défis opérationnels, je m'intéresse aux méthodes, technologies et stratégies permettant d'améliorer durablement la performance des organisations, tout au long du cycle de vie des produits et des opérations.
+        </p>
+        <div class="about-contacts">
+          <a href="mailto:boussaadabde@gmail.com" class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            boussaadabde@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/boussaadah-abdessamad/" target="_blank" rel="noopener" class="contact-item">
+            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+            linkedin.com/in/boussaadah-abdessamad
+          </a>
+          <a href="tel:+33766810794" class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            +33 7 66 81 07 94
+          </a>
+          <span class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <span data-fr="Paris, France" data-en="Paris, France">Paris, France</span>
+          </span>
+        </div>
+      </div>
+      <div class="about-right reveal">
+        <div class="info-card">
+          <div class="info-card-head"><i class="fas fa-chart-line"></i> <span data-fr="Amélioration continue &amp; Lean 6 Sigma" data-en="Continuous improvement &amp; Lean 6 Sigma">Amélioration continue &amp; Lean 6 Sigma</span></div>
+          <p data-fr="Pilotage DMAIC, Lean Management, optimisation des processus et réduction des gaspillages pour une performance durable." data-en="DMAIC management, Lean Management, process optimization and waste reduction for sustainable performance.">Pilotage DMAIC, Lean Management, optimisation des processus et réduction des gaspillages pour une performance durable.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-head"><i class="fas fa-users-gear"></i> <span data-fr="Management &amp; conduite du changement" data-en="Management &amp; change management">Management &amp; conduite du changement</span></div>
+          <p data-fr="Management et gestion d'équipes, conduite du changement et qualité de vie au travail — notamment dans le cadre de mon alternance chez SNCF Réseau." data-en="Team management, change management and quality of work life — notably during my apprenticeship at SNCF Réseau.">Management et gestion d'équipes, conduite du changement et qualité de vie au travail — notamment dans le cadre de mon alternance chez SNCF Réseau.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-head"><i class="fas fa-gears"></i> <span data-fr="Industrialisation" data-en="Industrialization">Industrialisation</span></div>
+          <p data-fr="De la conception du produit à son industrialisation : modes opératoires, gammes, mise au point de postes et transformation industrielle." data-en="From product design to industrialization: work instructions, routings, workstation ramp-up and industrial transformation.">De la conception du produit à son industrialisation : modes opératoires, gammes, mise au point de postes et transformation industrielle.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-head"><i class="fas fa-screwdriver-wrench"></i> <span data-fr="Ingénierie mécanique" data-en="Mechanical engineering">Ingénierie mécanique</span></div>
+          <p data-fr="Solide socle en mécanique et productique : conception CAO, fabrication, dimensionnement et compréhension fine du produit." data-en="Strong foundation in mechanics and production: CAD design, manufacturing, sizing and deep product understanding.">Solide socle en mécanique et productique : conception CAO, fabrication, dimensionnement et compréhension fine du produit.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-head"><i class="fas fa-graduation-cap"></i> <span data-fr="En formation" data-en="Currently studying">En formation</span></div>
+          <p data-fr="Mastère Spécialisé Excellence Opérationnelle (Green/Black Belt Six Sigma) au CESI, en alternance chez SNCF Réseau." data-en="Specialized Master's in Operational Excellence (Green/Black Belt Six Sigma) at CESI, work-study at SNCF Réseau.">Mastère Spécialisé Excellence Opérationnelle (Green/Black Belt Six Sigma) au CESI, en alternance chez SNCF Réseau.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-wrap">
+    <div class="section-eyebrow reveal" data-fr="Parcours" data-en="Experience">Parcours</div>
+    <h2 class="section-title reveal" data-fr="Où j'ai travaillé" data-en="Where I've worked">Où j'ai travaillé</h2>
+    <p class="edu-hint reveal" data-fr="Cliquez sur une expérience pour voir le détail et les documents associés." data-en="Click on an experience to see details and related documents.">Cliquez sur une expérience pour voir le détail et les documents associés.</p>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-wrap">
+    <div class="section-eyebrow reveal" data-fr="Projets" data-en="Projects">Projets</div>
+    <h2 class="section-title reveal" data-fr="Ce que j'ai réalisé" data-en="What I've built">Ce que j'ai réalisé</h2>
+    <p class="edu-hint reveal" data-fr="Cliquez sur un projet pour voir le détail et les documents associés." data-en="Click on a project to see details and related documents.">Cliquez sur un projet pour voir le détail et les documents associés.</p>
+    <div class="proj-grid" id="projGrid"></div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-wrap">
+    <div class="section-eyebrow reveal" data-fr="Compétences" data-en="Skills">Compétences</div>
+    <h2 class="section-title reveal" data-fr="Mon arsenal technique" data-en="Technical toolkit">Mon arsenal technique</h2>
+    <div class="skills-grid">
+
+      <div class="skill-cat reveal">
+        <div class="skill-cat-head"><i class="fas fa-chart-line"></i> <span data-fr="Lean &amp; Six Sigma" data-en="Lean &amp; Six Sigma">Lean &amp; Six Sigma</span></div>
+        <div class="skill-tags">
+          <span class="stag highlight">DMAIC</span><span class="stag highlight">Green/Black Belt</span><span class="stag">Capabilité</span><span class="stag">Kaizen</span><span class="stag">VSM</span><span class="stag">5S</span><span class="stag">SMED</span>
+        </div>
+      </div>
+
+      <div class="skill-cat reveal">
+        <div class="skill-cat-head"><i class="fas fa-gears"></i> <span data-fr="Industrialisation" data-en="Industrialization">Industrialisation</span></div>
+        <div class="skill-tags">
+          <span class="stag highlight">Modes opératoires</span><span class="stag">Gammes</span><span class="stag">AMDEC</span><span class="stag">Mise au point poste</span><span class="stag">Ergonomie</span>
+        </div>
+      </div>
+
+      <div class="skill-cat reveal">
+        <div class="skill-cat-head"><i class="fas fa-magnifying-glass-chart"></i> <span data-fr="Données &amp; analyse" data-en="Data &amp; analysis">Données &amp; analyse</span></div>
+        <div class="skill-tags">
+          <span class="stag highlight">Power BI</span><span class="stag highlight">Excel avancé</span><span class="stag">Python</span><span class="stag">Statistiques</span><span class="stag">Minitab</span>
+        </div>
+      </div>
+
+      <div class="skill-cat reveal">
+        <div class="skill-cat-head"><i class="fas fa-cube"></i> <span data-fr="Conception &amp; CAO" data-en="Design &amp; CAD">Conception &amp; CAO</span></div>
+        <div class="skill-tags">
+          <span class="stag">CATIA / SolidWorks</span><span class="stag">Scan 3D</span><span class="stag">Fabrication additive</span><span class="stag">EBM</span>
+        </div>
+      </div>
+
+      <div class="skill-cat reveal">
+        <div class="skill-cat-head"><i class="fas fa-people-group"></i> <span data-fr="Gestion &amp; terrain" data-en="Management &amp; field">Gestion &amp; terrain</span></div>
+        <div class="skill-tags">
+          <span class="stag highlight">Gestion de projet</span><span class="stag">Animation d'ateliers</span><span class="stag">Entretiens</span><span class="stag">Conduite du changement</span>
+        </div>
+      </div>
+
+      <div class="skill-cat reveal">
+        <div class="skill-cat-head"><i class="fas fa-language"></i> <span data-fr="Langues" data-en="Languages">Langues</span></div>
+        <div class="skill-tags">
+          <span class="stag highlight">Français</span><span class="stag highlight">Anglais</span><span class="stag">Arabe</span><span class="stag">[À compléter]</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-wrap">
+    <div class="section-eyebrow reveal" data-fr="Formation" data-en="Education">Formation</div>
+    <h2 class="section-title reveal" data-fr="Mon parcours académique" data-en="Academic background">Mon parcours académique</h2>
+    <p class="edu-hint reveal" data-fr="Cliquez sur un diplôme pour voir le détail (cours, logiciels, compétences)." data-en="Click on a degree to see the details (courses, software, skills).">Cliquez sur un diplôme pour voir le détail (cours, logiciels, compétences).</p>
+    <div class="edu-grid">
+
+      <div class="edu-card reveal" tabindex="0" role="button" aria-label="CESI" onclick="openEdu('cesi')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openEdu('cesi')}">
+        <div class="edu-year" data-fr="En cours" data-en="Ongoing">En cours</div>
+        <div class="edu-school">CESI</div>
+        <div class="edu-degree" data-fr="Mastère Spécialisé — Excellence Opérationnelle &amp; Amélioration Continue (Green/Black Belt Six Sigma)" data-en="Specialized Master's — Operational Excellence &amp; Continuous Improvement (Green/Black Belt Six Sigma)">Mastère Spécialisé — Excellence Opérationnelle &amp; Amélioration Continue (Green/Black Belt Six Sigma)</div>
+        <div class="edu-loc"><i class="fas fa-map-marker-alt"></i><span data-fr="France · Alternance SNCF Réseau" data-en="France · Work-study SNCF Réseau">France · Alternance SNCF Réseau</span></div>
+        <span class="edu-more"><i class="fas fa-arrow-right"></i></span>
+      </div>
+
+      <div class="edu-card reveal" tabindex="0" role="button" aria-label="Grenoble INP" onclick="openEdu('grenoble')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openEdu('grenoble')}">
+        <div class="edu-year">[Année]</div>
+        <div class="edu-school">Grenoble INP</div>
+        <div class="edu-degree" data-fr="Diplôme d'ingénieur — Génie Industriel" data-en="Engineering degree — Industrial Engineering">Diplôme d'ingénieur — Génie Industriel</div>
+        <div class="edu-loc"><i class="fas fa-map-marker-alt"></i>Grenoble, France</div>
+        <span class="edu-more"><i class="fas fa-arrow-right"></i></span>
+      </div>
+
+      <div class="edu-card reveal" tabindex="0" role="button" aria-label="ENSAM Rabat" onclick="openEdu('ensam')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openEdu('ensam')}">
+        <div class="edu-year">[Année]</div>
+        <div class="edu-school">ENSAM Rabat</div>
+        <div class="edu-degree" data-fr="Diplôme d'ingénieur (double diplôme)" data-en="Engineering degree (dual degree)">Diplôme d'ingénieur (double diplôme)</div>
+        <div class="edu-loc"><i class="fas fa-map-marker-alt"></i><span data-fr="Rabat, Maroc" data-en="Rabat, Morocco">Rabat, Maroc</span></div>
+        <span class="edu-more"><i class="fas fa-arrow-right"></i></span>
+      </div>
+
+      <div class="edu-card reveal" tabindex="0" role="button" aria-label="EST" onclick="openEdu('est')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openEdu('est')}">
+        <div class="edu-year">[Année]</div>
+        <div class="edu-school" data-fr="École Supérieure de Technologie (EST)" data-en="Higher School of Technology (EST)">École Supérieure de Technologie (EST)</div>
+        <div class="edu-degree" data-fr="DUT — [Spécialité à compléter]" data-en="Technical degree (DUT) — [Specialty to complete]">DUT — [Spécialité à compléter]</div>
+        <div class="edu-loc"><i class="fas fa-map-marker-alt"></i><span data-fr="[Ville], Maroc" data-en="[City], Morocco">[Ville], Maroc</span></div>
+        <span class="edu-more"><i class="fas fa-arrow-right"></i></span>
+      </div>
+
+      <div class="edu-card reveal" tabindex="0" role="button" aria-label="Baccalauréat" onclick="openEdu('bac')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openEdu('bac')}">
+        <div class="edu-year">[Année]</div>
+        <div class="edu-school" data-fr="Baccalauréat" data-en="High School Diploma">Baccalauréat</div>
+        <div class="edu-degree" data-fr="Bac [Sciences ... à compléter]" data-en="Baccalaureate [Sciences ... to complete]">Bac [Sciences ... à compléter]</div>
+        <div class="edu-loc"><i class="fas fa-map-marker-alt"></i><span data-fr="[Ville], Maroc" data-en="[City], Morocco">[Ville], Maroc</span></div>
+        <span class="edu-more"><i class="fas fa-arrow-right"></i></span>
+      </div>
+
+    </div>
+
+    <div class="certs-block">
+      <div class="section-eyebrow reveal" data-fr="Certifications" data-en="Certifications">Certifications</div>
+      <div class="certs-row">
+        <div class="cert-badge reveal">
+          <i class="fas fa-certificate"></i>
+          <div><div class="ct">Lean Six Sigma</div><span data-fr="Green / Black Belt (CESI)" data-en="Green / Black Belt (CESI)">Green / Black Belt (CESI)</span></div>
+        </div>
+        <div class="cert-badge reveal">
+          <i class="fas fa-award"></i>
+          <div><div class="ct">[À compléter]</div><span data-fr="Ajoute tes certifications" data-en="Add your certifications">Ajoute tes certifications</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-wrap">
+    <div class="section-eyebrow reveal" data-fr="Contact" data-en="Contact">Contact</div>
+    <h2 class="section-title reveal" data-fr="Travaillons ensemble" data-en="Let's work together">Travaillons ensemble</h2>
+    <div class="contact-grid">
+      <div class="contact-links reveal">
+        <a href="mailto:boussaadabde@gmail.com" class="contact-link-card">
+          <div class="clc-icon"><i class="fas fa-envelope"></i></div>
+          <div><div class="clc-label">Email</div><div class="clc-val">boussaadabde@gmail.com</div></div>
+        </a>
+        <a href="https://www.linkedin.com/in/boussaadah-abdessamad/" target="_blank" rel="noopener" class="contact-link-card">
+          <div class="clc-icon"><i class="fab fa-linkedin"></i></div>
+          <div><div class="clc-label">LinkedIn</div><div class="clc-val">boussaadah-abdessamad</div></div>
+        </a>
+        <a href="tel:+33766810794" class="contact-link-card">
+          <div class="clc-icon"><i class="fas fa-phone"></i></div>
+          <div><div class="clc-label" data-fr="Téléphone" data-en="Phone">Téléphone</div><div class="clc-val">+33 7 66 81 07 94</div></div>
+        </a>
+        <span class="contact-link-card" style="cursor:default;">
+          <div class="clc-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div><div class="clc-label" data-fr="Localisation" data-en="Location">Localisation</div><div class="clc-val">Paris, France</div></div>
+        </span>
+      </div>
+      <div class="contact-cta reveal">
+        <h3 data-fr="Ouvert aux opportunités en Excellence Opérationnelle" data-en="Open to Operational Excellence opportunities">Ouvert aux opportunités en Excellence Opérationnelle</h3>
+        <p data-fr="Je recherche un poste d'<strong>ingénieur en Excellence Opérationnelle / Amélioration Continue</strong> en région parisienne. Amélioration continue, Lean 6 Sigma, industrialisation — parlons-en." data-en="I'm looking for an <strong>Operational Excellence / Continuous Improvement engineer</strong> role in the Paris area. Continuous improvement, Lean 6 Sigma, industrialization — let's talk.">Je recherche un poste d'<strong>ingénieur en Excellence Opérationnelle / Amélioration Continue</strong> en région parisienne. Amélioration continue, Lean 6 Sigma, industrialisation — parlons-en.</p>
+        <a href="mailto:boussaadabde@gmail.com" class="btn btn-primary" style="background:var(--sky);width:fit-content;"><i class="fas fa-paper-plane"></i> <span data-fr="M'envoyer un email" data-en="Send me an email">M'envoyer un email</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODALE FORMATION -->
+<div class="edu-modal-overlay" id="eduModal" onclick="if(event.target===this)closeEdu()">
+  <div class="edu-modal" role="dialog" aria-modal="true" aria-labelledby="eduModalSchool">
+    <button class="edu-modal-close" onclick="closeEdu()" aria-label="Fermer"><i class="fas fa-xmark"></i></button>
+    <div class="edu-modal-head">
+      <div class="edu-modal-year" id="eduModalYear"></div>
+      <h3 class="edu-modal-school" id="eduModalSchool"></h3>
+      <div class="edu-modal-degree" id="eduModalDegree"></div>
+      <div class="edu-modal-loc"><i class="fas fa-map-marker-alt"></i> <span id="eduModalLoc"></span></div>
+    </div>
+    <div class="edu-modal-body">
+      <div class="edu-block">
+        <div class="edu-block-head"><i class="fas fa-book-open"></i> <span data-fr="Cours enseignés" data-en="Courses">Cours enseignés</span></div>
+        <ul id="eduModalCourses"></ul>
+      </div>
+      <div class="edu-block">
+        <div class="edu-block-head"><i class="fas fa-laptop-code"></i> <span data-fr="Logiciels &amp; outils" data-en="Software &amp; tools">Logiciels &amp; outils</span></div>
+        <div class="edu-chips" id="eduModalTools"></div>
+      </div>
+      <div class="edu-block">
+        <div class="edu-block-head"><i class="fas fa-star"></i> <span data-fr="Compétences acquises" data-en="Skills gained">Compétences acquises</span></div>
+        <div class="edu-chips" id="eduModalSkills"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODALE DÉTAIL (Expérience / Projet) -->
+<div class="edu-modal-overlay" id="detailModal" onclick="if(event.target===this)closeDetail()">
+  <div class="edu-modal" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+    <button class="edu-modal-close" onclick="closeDetail()" aria-label="Fermer"><i class="fas fa-xmark"></i></button>
+    <div class="edu-modal-head">
+      <span class="detail-logo" id="detailLogo"></span>
+      <div class="edu-modal-year" id="detailYear"></div>
+      <h3 class="edu-modal-school" id="detailTitle"></h3>
+      <div class="edu-modal-degree" id="detailRole"></div>
+      <div class="edu-modal-loc"><i class="fas fa-map-marker-alt"></i> <span id="detailLoc"></span></div>
+    </div>
+    <div class="edu-modal-body">
+      <div class="edu-block">
+        <div class="edu-block-head"><i class="fas fa-list-check"></i> <span data-fr="Missions &amp; réalisations" data-en="Tasks &amp; achievements">Missions &amp; réalisations</span></div>
+        <ul id="detailItems"></ul>
+      </div>
+      <div class="edu-block" id="detailTagsBlock">
+        <div class="edu-block-head"><i class="fas fa-tags"></i> <span data-fr="Outils &amp; méthodes" data-en="Tools &amp; methods">Outils &amp; méthodes</span></div>
+        <div class="edu-chips" id="detailTags"></div>
+      </div>
+      <div class="edu-block">
+        <div class="edu-block-head"><i class="fas fa-folder-open"></i> <span data-fr="Documents &amp; ressources" data-en="Documents &amp; resources">Documents &amp; ressources</span></div>
+        <div class="edu-docs" id="detailDocs"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p data-fr="Conçu &amp; développé par <span>Abdessamad Boussaadah</span> · Ingénieur Excellence Opérationnelle · Paris, France" data-en="Designed &amp; built by <span>Abdessamad Boussaadah</span> · Operational Excellence Engineer · Paris, France">Conçu &amp; développé par <span>Abdessamad Boussaadah</span> · Ingénieur Excellence Opérationnelle · Paris, France</p>
+</footer>
+
+<script>
+  /* ── Réseau industriel animé (filigrane global) ── */
+  (function () {
+    const canvas = document.getElementById('bg-net');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let W, H, points = [], raf = null;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function size() {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+    size();
+
+    // densité adaptée à la largeur, réseau plus dense en haut à droite
+    function build() {
+      points = [];
+      const n = Math.min(110, Math.floor((W * H) / 16000));
+      for (let i = 0; i < n; i++) {
+        // biais vers le haut-droite (émanation type industrie 4.0)
+        const bias = Math.random();
+        const x = bias < 0.55 ? Math.random() * W : (0.45 + Math.random() * 0.55) * W;
+        const y = bias < 0.55 ? Math.random() * H : Math.random() * H * 0.6;
+        points.push({
+          x, y,
+          vx: (Math.random() - 0.5) * 0.25,
+          vy: (Math.random() - 0.5) * 0.25,
+          r: Math.random() * 1.6 + 0.6
+        });
+      }
+    }
+    build();
+
+    const LINK = 132;
+    function frame() {
+      ctx.clearRect(0, 0, W, H);
+      for (let i = 0; i < points.length; i++) {
+        const p = points[i];
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > W) p.vx *= -1;
+        if (p.y < 0 || p.y > H) p.vy *= -1;
+
+        // point
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(47,159,224,0.35)';
+        ctx.fill();
+
+        // liaisons
+        for (let j = i + 1; j < points.length; j++) {
+          const q = points[j];
+          const dx = p.x - q.x, dy = p.y - q.y;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d < LINK) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y);
+            ctx.strokeStyle = 'rgba(47,159,224,' + (0.10 * (1 - d / LINK)) + ')';
+            ctx.lineWidth = 0.6;
+            ctx.stroke();
+          }
+        }
+      }
+      raf = requestAnimationFrame(frame);
+    }
+
+    if (reduce) {
+      // version statique discrète
+      frame();
+      cancelAnimationFrame(raf);
+    } else {
+      frame();
+    }
+
+    let resizeT;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeT);
+      resizeT = setTimeout(() => { size(); build(); }, 200);
+    });
+  })();
+
+
+  /* ── Bilingue ── */
+  const typedPhrases = {
+    fr: ['Ingénieur Excellence Opérationnelle', 'Amélioration continue · 6 Sigma', 'Ingénieur Industriel', 'Ingénieur Produits', 'Ingénieur Mécanique'],
+    en: ['Operational Excellence Engineer', 'Continuous improvement · 6 Sigma', 'Industrial Engineer', 'Product Engineer', 'Mechanical Engineer']
+  };
+  let currentLang = 'fr';
+
+  function setLang(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.querySelectorAll('[data-fr]').forEach(el => {
+      const val = el.getAttribute('data-' + lang);
+      if (val !== null) el.innerHTML = val;
+    });
+    restartTyping();
+    if (typeof currentEdu !== 'undefined' && currentEdu) renderEdu();
+    if (typeof renderExperiences === 'function') { renderExperiences(); renderProjects(); }
+    if (typeof currentDetail !== 'undefined' && currentDetail) renderDetail();
+  }
+
+  /* ── Données formation (bilingue) — remplis les [À compléter] ── */
+  const eduData = {
+    cesi: {
+      year: { fr: 'En cours', en: 'Ongoing' },
+      school: 'CESI',
+      degree: { fr: 'Mastère Spécialisé — Excellence Opérationnelle &amp; Amélioration Continue (Green/Black Belt Six Sigma)', en: "Specialized Master's — Operational Excellence &amp; Continuous Improvement (Green/Black Belt Six Sigma)" },
+      loc: { fr: 'France · Alternance SNCF Réseau', en: 'France · Work-study SNCF Réseau' },
+      courses: {
+        fr: ['Démarche DMAIC &amp; Six Sigma', 'Lean Management', 'Statistiques appliquées / capabilité', 'Management de projet', '[À compléter]'],
+        en: ['DMAIC &amp; Six Sigma approach', 'Lean Management', 'Applied statistics / capability', 'Project management', '[To complete]']
+      },
+      tools: ['Minitab', 'Power BI', 'Excel', '[À compléter]'],
+      skills: { fr: ['DMAIC', 'Amélioration continue', 'Conduite du changement', '[À compléter]'], en: ['DMAIC', 'Continuous improvement', 'Change management', '[To complete]'] }
+    },
+    grenoble: {
+      year: { fr: '[Année]', en: '[Year]' },
+      school: 'Grenoble INP',
+      degree: { fr: "Diplôme d'ingénieur — Génie Industriel", en: 'Engineering degree — Industrial Engineering' },
+      loc: { fr: 'Grenoble, France', en: 'Grenoble, France' },
+      courses: { fr: ['[À compléter — cours suivis]'], en: ['[To complete — courses taken]'] },
+      tools: ['[À compléter]'],
+      skills: { fr: ['[À compléter]'], en: ['[To complete]'] }
+    },
+    ensam: {
+      year: { fr: '[Année]', en: '[Year]' },
+      school: 'ENSAM Rabat',
+      degree: { fr: "Diplôme d'ingénieur (double diplôme)", en: 'Engineering degree (dual degree)' },
+      loc: { fr: 'Rabat, Maroc', en: 'Rabat, Morocco' },
+      courses: { fr: ['[À compléter — cours suivis]'], en: ['[To complete — courses taken]'] },
+      tools: ['[À compléter]'],
+      skills: { fr: ['[À compléter]'], en: ['[To complete]'] }
+    },
+    est: {
+      year: { fr: '[Année]', en: '[Year]' },
+      school: { fr: 'École Supérieure de Technologie (EST)', en: 'Higher School of Technology (EST)' },
+      degree: { fr: 'DUT — [Spécialité à compléter]', en: 'Technical degree (DUT) — [Specialty to complete]' },
+      loc: { fr: '[Ville], Maroc', en: '[City], Morocco' },
+      courses: { fr: ['[À compléter — cours suivis]'], en: ['[To complete — courses taken]'] },
+      tools: ['[À compléter]'],
+      skills: { fr: ['[À compléter]'], en: ['[To complete]'] }
+    },
+    bac: {
+      year: { fr: '[Année]', en: '[Year]' },
+      school: { fr: 'Baccalauréat', en: 'High School Diploma' },
+      degree: { fr: 'Bac [Sciences ... à compléter]', en: 'Baccalaureate [Sciences ... to complete]' },
+      loc: { fr: '[Ville], Maroc', en: '[City], Morocco' },
+      courses: { fr: ['[À compléter — matières principales]'], en: ['[To complete — main subjects]'] },
+      tools: ['[À compléter]'],
+      skills: { fr: ['[À compléter]'], en: ['[To complete]'] }
+    }
+  };
+
+  let currentEdu = null;
+  const eduModal = document.getElementById('eduModal');
+
+  function pick(v) { return (typeof v === 'object' && v !== null && (v.fr || v.en)) ? (v[currentLang] || v.fr) : v; }
+
+  function renderEdu() {
+    if (!currentEdu) return;
+    const d = eduData[currentEdu];
+    document.getElementById('eduModalYear').innerHTML = pick(d.year);
+    document.getElementById('eduModalSchool').innerHTML = pick(d.school);
+    document.getElementById('eduModalDegree').innerHTML = pick(d.degree);
+    document.getElementById('eduModalLoc').innerHTML = pick(d.loc);
+    document.getElementById('eduModalCourses').innerHTML = (d.courses[currentLang] || d.courses.fr).map(c => '<li>' + c + '</li>').join('');
+    document.getElementById('eduModalTools').innerHTML = d.tools.map(t => '<span>' + t + '</span>').join('');
+    document.getElementById('eduModalSkills').innerHTML = (d.skills[currentLang] || d.skills.fr).map(s => '<span>' + s + '</span>').join('');
+  }
+
+  function openEdu(key) {
+    currentEdu = key;
+    renderEdu();
+    eduModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeEdu() {
+    eduModal.classList.remove('open');
+    document.body.style.overflow = '';
+    currentEdu = null;
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && eduModal.classList.contains('open')) closeEdu(); });
+
+  /* ════════════════════════════════════════════════════════════════
+     EXPÉRIENCES — ajoute/édite une entrée ici (la carte + la modale
+     se génèrent automatiquement). Pour les documents : type 'pdf',
+     'link', 'img' ou 'doc'. Mets ton fichier à côté du site et indique
+     son chemin dans "href" (ex: 'docs/rapport-sncf.pdf').
+     ════════════════════════════════════════════════════════════════ */
+  const experiences = [
+    {
+      company: 'SNCF Réseau',
+      icon: 'fa-train',
+      logo: 'logo-sncf-reseau.png',
+      date: { fr: '2025 — 2026', en: '2025 — 2026' },
+      role: { fr: 'Chargé Amélioration Continue & Excellence Opérationnelle', en: 'Continuous Improvement & Operational Excellence Officer' },
+      loc: { fr: 'Direction du Recrutement · Unité Territoriale Île-de-France', en: 'Recruitment Department · Île-de-France Territorial Unit' },
+      items: {
+        fr: ['Réalisation du diagnostic et de l\'état des lieux du processus de recrutement de profils techniques en forte tension : cadrage du projet, définition du périmètre et des objectifs, élaboration du PDP (Plan Directeur de Production) et du CBN (Calcul des Besoins Nets) pour planifier la charge et anticiper les besoins, en tant que leader d\'une équipe projet pluridisciplinaire.',
+             'Cartographie complète du flux de valeur (VSM, FIPOC, diagrammes swimlanes) et mesure des temps de cycle, des en-cours, des volumes et du taux de conversion ; conception et déploiement de tableaux de bord Power BI pour le pilotage en temps réel des KPI.',
+             'Analyse des données et de l\'historique d\'activité, benchmark B2B et entretiens terrain ; application des outils d\'amélioration continue (Ishikawa, 5 Pourquoi, Pareto, analyse des causes racines) pour identifier goulots, gaspillages (Muda) et sources de variabilité.',
+             'Conception et proposition de solutions : standardisation des nouveaux modes opératoires et swimlanes, mise en place d\'un tableau de management visuel et d\'un système de pilotage par les indicateurs, rédaction d\'un cahier des charges et test d\'un outil de matching CV, sourcing et prospection candidats via une plateforme IA pour automatiser le tri des candidatures.',
+             'Centralisation et fiabilisation des données sur SharePoint (architecture documentaire, matrice des droits d\'accès) et rédaction des modes d\'emploi et standards d\'utilisation des outils déployés.',
+             'Conduite du changement et ancrage des nouvelles pratiques : animation de rituels d\'équipe et de réunions de pilotage (stand-up, points production), accompagnement et montée en compétence des utilisateurs, standardisation et pérennisation des gains (PDCA).'],
+        en: ['Conducted the diagnosis and current state assessment of the recruitment process for high demand technical profiles: project scoping, definition of perimeter and objectives, design of the MPS (Master Production Schedule) and MRP (Material Requirements Planning) to plan workload and anticipate needs, as leader of a cross functional project team.',
+             'Full value stream mapping (VSM, FIPOC, swimlane diagrams) and measurement of cycle times, work in progress, volumes and conversion rate; designed and deployed Power BI dashboards for real time KPI steering.',
+             'Analysis of activity data and history, B2B benchmarking and field interviews; applied continuous improvement tools (Ishikawa, 5 Whys, Pareto, root cause analysis) to identify bottlenecks, waste (Muda) and sources of variability.',
+             'Design and proposal of solutions: standardization of new work instructions and swimlanes, implementation of a visual management board and KPI based steering system, drafting of a requirements specification and testing of a CV matching, sourcing and candidate prospecting tool through an AI platform to automate application screening.',
+             'Centralization and reliability of data on SharePoint (document architecture, access rights matrix) and writing of user guides and usage standards for the deployed tools.',
+             'Change management and embedding of new practices: facilitation of team rituals and steering meetings (stand-ups, production reviews), support and upskilling of users, standardization and sustainment of gains (PDCA).']
+      },
+      tags: ['Lean Office', 'DMAIC / PDCA', 'PDP &amp; CBN', 'VSM &amp; Swimlanes', 'Power BI', 'Management visuel', 'Matching IA', 'Conduite du changement'],
+      docs: []
+    },
+    {
+      company: 'COTHERM — Groupe Atlantic',
+      icon: 'fa-person-digging',
+      date: { fr: 'PFE', en: 'Final project' },
+      role: { fr: 'Projet de fin d\'études — Amélioration de poste & ergonomie', en: 'Final-year project — Workstation & ergonomics improvement' },
+      loc: { fr: 'Thermique / Production', en: 'Thermal / Production' },
+      items: {
+        fr: ['<strong>Amélioration ergonomique</strong> d\'un poste de travail par démarche DMAIC, incluant scans 3D et études de capabilité.',
+             'Engagement terrain auprès des opératrices pour co-construire les solutions.'],
+        en: ['<strong>Ergonomic improvement</strong> of a workstation through DMAIC, including 3D scans and capability studies.',
+             'Field engagement with operators to co-design solutions.']
+      },
+      tags: ['DMAIC', 'Ergonomie', 'Scan 3D', 'SolidWorks'],
+      docs: []
+    },
+    {
+      company: 'STMicroelectronics',
+      icon: 'fa-microchip',
+      date: { fr: 'Projet', en: 'Project' },
+      role: { fr: 'Étude de cas — Industrialisation semi-conducteurs', en: 'Case study — Semiconductor industrialization' },
+      loc: { fr: 'Semi-conducteurs', en: 'Semiconductors' },
+      items: { fr: ['[À compléter] Étude d\'industrialisation appliquée au secteur des semi-conducteurs.'], en: ['[To complete] Industrialization study applied to the semiconductor sector.'] },
+      tags: ['Industrialisation', '[À compléter]'],
+      docs: []
+    }
+    // ↓ COPIE ce bloc pour ajouter une expérience
+    // ,{ company:'', icon:'fa-industry', date:{fr:'',en:''}, role:{fr:'',en:''}, loc:{fr:'',en:''}, items:{fr:[''],en:['']}, tags:[''], docs:[] }
+  ];
+
+  /* ════════════════════════════════════════════════════════════════
+     PROJETS — même principe.
+     ════════════════════════════════════════════════════════════════ */
+  const projects = [
+    {
+      icon: 'fa-train',
+      year: '2025–2026',
+      name: { fr: 'Optimisation recrutement électriciens (DMAIC)', en: 'Electrician recruitment optimization (DMAIC)' },
+      desc: { fr: 'Thèse d\'alternance SNCF Réseau : réduction du lead time de recrutement et amélioration du taux de transformation via une démarche Six Sigma complète, dashboards de pilotage et benchmark externe.', en: 'SNCF Réseau work-study thesis: reducing recruitment lead time and improving conversion rate via a full Six Sigma approach, management dashboards and external benchmarking.' },
+      items: { fr: ['Démarche DMAIC complète sur un process support (Lean Office).', 'Dashboards de pilotage et analyse de données.', 'Benchmark interne (UTRs) et externe (OPCO Mobilités).'], en: ['Full DMAIC approach on a support process (Lean Office).', 'Management dashboards and data analysis.', 'Internal (UTRs) and external (OPCO Mobilités) benchmarking.'] },
+      tags: ['DMAIC', 'Six Sigma', 'Power BI', 'Benchmark'],
+      docs: [{ type: 'pdf', href: '#', name: { fr: 'Rapport de thèse (PDF)', en: 'Thesis report (PDF)' }, sub: { fr: '[À ajouter]', en: '[To add]' } }]
+    },
+    {
+      icon: 'fa-person-digging',
+      year: 'PFE',
+      name: { fr: 'Amélioration ergonomique de poste — COTHERM', en: 'Workstation ergonomics — COTHERM' },
+      desc: { fr: 'Projet de fin d\'études chez COTHERM (Groupe Atlantic) : refonte ergonomique d\'un poste de production avec scans 3D, études de capabilité et co-construction terrain.', en: 'Final-year project at COTHERM (Groupe Atlantic): ergonomic redesign of a production workstation with 3D scans, capability studies and field co-design.' },
+      items: { fr: ['Analyse RULA et scans 3D du poste.', 'Études de capabilité.', 'Solutions co-construites avec les opératrices.'], en: ['RULA analysis and 3D scans of the workstation.', 'Capability studies.', 'Solutions co-designed with operators.'] },
+      tags: ['DMAIC', 'Ergonomie', 'Scan 3D', 'RULA'],
+      docs: []
+    },
+    {
+      icon: 'fa-heart-pulse',
+      year: '2023',
+      name: { fr: 'Tracker chirurgical titane — AREAS (médical)', en: 'Titanium surgical tracker — AREAS (medical)' },
+      desc: { fr: 'Projet académique medtech : conception d\'un tracker chirurgical en titane par fabrication additive EBM, articulant exigences cliniques et contraintes d\'industrialisation.', en: 'Academic medtech project: design of a titanium surgical tracker via EBM additive manufacturing, balancing clinical requirements and industrialization constraints.' },
+      items: { fr: ['Conception CAO et choix matériau (titane).', 'Fabrication additive EBM.', 'Prise en compte des contraintes cliniques et d\'industrialisation.'], en: ['CAD design and material selection (titanium).', 'EBM additive manufacturing.', 'Clinical and industrialization constraints taken into account.'] },
+      tags: ['Medtech', 'EBM / Titane', 'Fabrication additive', 'CAO'],
+      docs: []
+    }
+    // ↓ COPIE ce bloc pour ajouter un projet
+    // ,{ icon:'fa-industry', year:'', name:{fr:'',en:''}, desc:{fr:'',en:''}, items:{fr:[''],en:['']}, tags:[''], docs:[] }
+  ];
+
+  const docMeta = {
+    pdf:  { cls: 'pdf',  icon: 'fa-file-pdf' },
+    link: { cls: 'link', icon: 'fa-arrow-up-right-from-square' },
+    img:  { cls: 'img',  icon: 'fa-image' },
+    doc:  { cls: 'doc',  icon: 'fa-file-lines' }
+  };
+
+  /* ── Rendu des cartes ── */
+  function L(v) { return (v && typeof v === 'object') ? (v[currentLang] || v.fr) : v; }
+
+  function renderExperiences() {
+    const tl = document.getElementById('timeline');
+    if (!tl) return;
+    tl.innerHTML = experiences.map((e, i) => {
+      const badge = e.docs && e.docs.length ? '<span class="doc-count"><i class="fas fa-paperclip"></i>' + e.docs.length + '</span>' : '';
+      const logo = e.logo ? '<span class="tl-logo"><img src="' + e.logo + '" alt="' + e.company + '" /></span>' : '';
+      return '<div class="tl-item reveal">' +
+        '<div class="tl-dot"></div>' +
+        '<div class="tl-card" tabindex="0" role="button" onclick="openDetail(\'exp\',' + i + ')" onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();openDetail(\'exp\',' + i + ')}">' +
+          '<div class="tl-head">' +
+            '<div class="tl-head-left"><span class="tl-company">' + e.company + badge + '</span>' +
+            '<span class="tl-date">' + L(e.date) + '</span></div>' +
+            logo +
+          '</div>' +
+          '<div class="tl-role">' + L(e.role) + '</div>' +
+          '<div class="tl-loc"><i class="fas fa-map-marker-alt"></i>' + L(e.loc) + '</div>' +
+          '<span class="card-more">' + (currentLang === 'fr' ? 'Voir le détail' : 'View details') + ' <i class="fas fa-arrow-right"></i></span>' +
+        '</div></div>';
+    }).join('');
+    refreshReveal(tl);
+  }
+
+  function renderProjects() {
+    const grid = document.getElementById('projGrid');
+    if (!grid) return;
+    grid.innerHTML = projects.map((p, i) => {
+      const badge = p.docs && p.docs.length ? '<span class="doc-count"><i class="fas fa-paperclip"></i>' + p.docs.length + '</span>' : '';
+      const tags = (p.tags || []).slice(0, 4).map((t, k) => '<span class="tag' + (k < 2 ? ' sky' : '') + '">' + t + '</span>').join('');
+      return '<div class="proj-card reveal" tabindex="0" role="button" onclick="openDetail(\'proj\',' + i + ')" onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();openDetail(\'proj\',' + i + ')}">' +
+        '<div class="proj-top"><div class="proj-icon"><i class="fas ' + p.icon + '"></i></div>' +
+        '<span class="proj-year">' + p.year + '</span></div>' +
+        '<div class="proj-name">' + L(p.name) + badge + '</div>' +
+        '<div class="proj-desc">' + L(p.desc) + '</div>' +
+        '<div class="proj-tags">' + tags + '</div>' +
+        '<span class="card-more">' + (currentLang === 'fr' ? 'Voir le détail' : 'View details') + ' <i class="fas fa-arrow-right"></i></span>' +
+        '</div>';
+    }).join('');
+    refreshReveal(grid);
+  }
+
+  /* ── Modale détail (exp / proj) ── */
+  let currentDetail = null;
+  const detailModal = document.getElementById('detailModal');
+
+  function buildDocs(docs) {
+    if (!docs || !docs.length) {
+      return '<p class="edu-empty">' + (currentLang === 'fr' ? 'Aucun document pour le moment.' : 'No document yet.') + '</p>';
+    }
+    return docs.map(d => {
+      const m = docMeta[d.type] || docMeta.doc;
+      const isReal = d.href && d.href !== '#';
+      const tag = isReal ? 'a' : 'span';
+      const attrs = isReal ? ' href="' + d.href + '" target="_blank" rel="noopener"' : ' style="cursor:default;opacity:.7"';
+      return '<' + tag + ' class="edu-doc"' + attrs + '>' +
+        '<span class="edu-doc-icon ' + m.cls + '"><i class="fas ' + m.icon + '"></i></span>' +
+        '<span class="edu-doc-txt"><span class="edu-doc-name">' + L(d.name) + '</span>' +
+        (d.sub ? '<span class="edu-doc-sub">' + L(d.sub) + '</span>' : '') + '</span>' +
+        '<span class="edu-doc-go"><i class="fas fa-' + (isReal ? 'arrow-right' : 'hourglass-half') + '"></i></span>' +
+        '</' + tag + '>';
+    }).join('');
+  }
+
+  function renderDetail() {
+    if (!currentDetail) return;
+    const d = currentDetail.type === 'exp' ? experiences[currentDetail.i] : projects[currentDetail.i];
+    document.getElementById('detailYear').innerHTML = currentDetail.type === 'exp' ? L(d.date) : d.year;
+    document.getElementById('detailTitle').innerHTML = currentDetail.type === 'exp' ? d.company : L(d.name);
+    document.getElementById('detailRole').innerHTML = currentDetail.type === 'exp' ? L(d.role) : L(d.desc);
+    document.getElementById('detailLoc').innerHTML = currentDetail.type === 'exp' ? L(d.loc) : (currentLang === 'fr' ? 'Projet' : 'Project');
+    document.getElementById('detailLogo').innerHTML = d.logo ? '<img src="' + d.logo + '" alt="' + (d.company || L(d.name)) + '" />' : '';
+    document.getElementById('detailItems').innerHTML = (d.items[currentLang] || d.items.fr).map(x => '<li>' + x + '</li>').join('');
+    document.getElementById('detailTags').innerHTML = (d.tags || []).map(t => '<span>' + t + '</span>').join('');
+    document.getElementById('detailDocs').innerHTML = buildDocs(d.docs);
+  }
+
+  function openDetail(type, i) {
+    currentDetail = { type, i };
+    renderDetail();
+    detailModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDetail() {
+    detailModal.classList.remove('open');
+    document.body.style.overflow = '';
+    currentDetail = null;
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && detailModal.classList.contains('open')) closeDetail(); });
+
+  /* applique l'observer reveal aux nouveaux éléments */
+  function refreshReveal(container) {
+    container.querySelectorAll('.reveal').forEach(el => { revealObserver.observe(el); });
+  }
+
+  /* ── Effet machine à écrire ── */
+  let pi = 0, ci = 0, deleting = false, typingTimer = null;
+  const typedEl = document.getElementById('typed-text');
+  function tick() {
+    const phrases = typedPhrases[currentLang];
+    const phrase = phrases[pi % phrases.length];
+    if (!deleting) {
+      typedEl.textContent = phrase.slice(0, ci + 1); ci++;
+      if (ci === phrase.length) { deleting = true; typingTimer = setTimeout(tick, 1900); return; }
+    } else {
+      typedEl.textContent = phrase.slice(0, ci - 1); ci--;
+      if (ci === 0) { deleting = false; pi++; }
+    }
+    typingTimer = setTimeout(tick, deleting ? 40 : 75);
+  }
+  function restartTyping() { clearTimeout(typingTimer); pi = 0; ci = 0; deleting = false; tick(); }
+  tick();
+
+  /* ── Nav scroll ── */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
+
+  /* ── Menu mobile ── */
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  /* ── Reveal au scroll ── */
+  var revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const sibs = Array.from(e.target.parentNode.children);
+        e.target.style.transitionDelay = (sibs.indexOf(e.target) % 5) * 0.07 + 's';
+        e.target.classList.add('visible');
+        revealObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  /* ── Rendu initial des cartes dynamiques ── */
+  renderExperiences();
+  renderProjects();
+</script>
+</body>
+</html>
