@@ -753,6 +753,46 @@
     .edu-doc.locked:hover { border-color: var(--border); transform: none; background: inherit; }
     .edu-doc-icon.lock { background: var(--navy); }
     .doc-request { display: inline-block; margin-top: .7rem; font-size: .85rem; font-weight: 600; color: var(--sky-dark); }
+    .proj-mosaic { display: grid; width: calc(100% + 3.8rem); max-width: none; height: 190px; margin: -1.9rem -1.9rem 1.3rem; gap: 2px; overflow: hidden; background: var(--border); border-bottom: 1px solid var(--border); grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; }
+    .proj-mosaic img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: cover; background: var(--bg2); }
+    .proj-mosaic.n3 img:first-child { grid-row: 1 / 3; }
+    .proj-mosaic.n2 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; }
+    .proj-mosaic.n1 { grid-template-columns: 1fr; grid-template-rows: 1fr; }
+    .proj-mosaic.n1 img { object-fit: contain; }
+    .tl-thumbs { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .95rem; }
+    .tl-thumbs img { display: block; width: 84px; height: 62px; object-fit: cover; border: 1px solid var(--border); border-radius: 8px; background: var(--bg2); }
+    .detail-gallery { display: grid; height: 350px; gap: .6rem; margin-bottom: 1.2rem; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; }
+    .detail-gallery.n3 .dg-item:first-child { grid-row: 1 / 3; }
+    .detail-gallery.n2 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; height: 300px; }
+    .detail-gallery.n1 { grid-template-columns: 1fr; grid-template-rows: 1fr; height: 320px; }
+    .dg-item { position: relative; min-width: 0; min-height: 0; padding: 0; overflow: hidden; cursor: zoom-in; background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; font: inherit; }
+    .dg-item:hover { border-color: var(--sky); }
+    .dg-item:focus-visible, .lb button:focus-visible { outline: 2px solid var(--sky); outline-offset: 2px; }
+    .dg-item { display: flex; flex-direction: column; }
+    .dg-item img { display: block; flex: 1 1 0; width: 100%; min-height: 0; object-fit: contain; }
+    .dg-item span { flex: none; padding: .3rem .6rem; color: var(--muted); background: #fff; border-top: 1px solid var(--border); font-size: .72rem; line-height: 1.35; text-align: left; }
+    .lb { position: fixed; inset: 0; z-index: 9999; display: none; flex-direction: column; align-items: center; justify-content: center; gap: .8rem; padding: 3.5rem 1rem 1.4rem; background: rgba(20,29,41,.94); }
+    .lb.open { display: flex; }
+    .lb img { display: block; max-width: min(1100px, 100%); max-height: calc(100vh - 8rem); min-height: 0; object-fit: contain; border-radius: 8px; background: #fff; }
+    .lb-cap { color: #fff; font-size: .9rem; text-align: center; }
+    .lb button { position: absolute; display: grid; place-items: center; width: 44px; height: 44px; color: #fff; cursor: pointer; background: rgba(255,255,255,.14); border: 0; border-radius: 50%; font-size: 1.05rem; }
+    .lb button:hover { background: rgba(255,255,255,.28); }
+    .lb-close { top: .8rem; right: .8rem; }
+    .lb-prev { top: 50%; left: .8rem; margin-top: -22px; }
+    .lb-next { top: 50%; right: .8rem; margin-top: -22px; }
+    @media (max-width: 640px) {
+      .detail-gallery, .detail-gallery.n2, .detail-gallery.n1 { height: auto; grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .detail-gallery .dg-item { height: 130px; }
+      .detail-gallery .dg-item:first-child, .detail-gallery.n1 .dg-item { grid-column: 1 / -1; grid-row: auto !important; height: 230px; }
+      .lb-prev, .lb-next { top: auto; bottom: .7rem; margin: 0; }
+      .lb { padding-bottom: 4.4rem; }
+    }
+    .lang-list { list-style: none; flex: 1; margin: 0; padding: 0; }
+    .lang-list li { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .15rem .9rem; padding: .62rem 0; border-top: 1px solid var(--border); }
+    .lang-list li:first-child { border-top: 0; padding-top: 0; }
+    .lang-list li:last-child { padding-bottom: 0; }
+    .lang-name { font-size: .92rem; font-weight: 600; color: var(--navy); }
+    .lang-level { font-size: .84rem; color: var(--muted); }
     .footer-private { display: block; margin-top: .4rem; font-size: .75rem; color: inherit; opacity: .6; }
   </style>
 </head>
@@ -784,10 +824,6 @@
 <section id="hero">
   <div class="hero-inner">
     <div class="hero-content">
-      <div class="hero-tag">
-        <span class="dot"></span>
-        <span data-fr="En recherche de CDI · Excellence Opérationnelle" data-en="Seeking a permanent position (CDI) · Operational Excellence">En recherche de CDI · Excellence Opérationnelle</span>
-      </div>
       <h1 class="hero-name">Abdessamad<br/><span class="accent">Boussaadah</span></h1>
       <div class="hero-role"><span id="typed-text"></span></div>
       <p class="hero-desc"
@@ -799,7 +835,7 @@
         <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> <span data-fr="Me contacter" data-en="Get in touch">Me contacter</span></a>
         <a href="#experience" class="btn btn-outline"><i class="fas fa-briefcase"></i> <span data-fr="Mon parcours" data-en="My experience">Mon parcours</span></a>
         <a href="CVLASTVERSION.pdf" class="btn btn-outline" onclick="openCv();return false;"><i class="fas fa-file-pdf"></i> <span data-fr="Mon CV" data-en="My resume">Mon CV</span></a>
-        <a href="mailto:boussaadabde@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i> <span data-fr="M'envoyer un mail" data-en="Email me">M'envoyer un mail</span></a>
+        <a href="mailto:abdeboussaadah@outlook.com" class="btn btn-outline"><i class="fas fa-envelope"></i> <span data-fr="M'envoyer un mail" data-en="Email me">M'envoyer un mail</span></a>
       </div>
       <div class="hero-stats">
         <div class="stat">
@@ -846,9 +882,9 @@
           Mes expériences au Maroc et en France, dans des environnements multiculturels et techniques, m'ont permis de développer une approche structurée et orientée résultats, fondée sur l'analyse, l'innovation et l'amélioration continue, au service d'une performance durable tout au long du cycle de vie des produits et des opérations.
         </p>
         <div class="about-contacts">
-          <a href="mailto:boussaadabde@gmail.com" class="contact-item">
+          <a href="mailto:abdeboussaadah@outlook.com" class="contact-item">
             <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-            boussaadabde@gmail.com
+            abdeboussaadah@outlook.com
           </a>
           <a href="https://www.linkedin.com/in/boussaadah-abdessamad/" target="_blank" rel="noopener" class="contact-item">
             <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
@@ -955,9 +991,11 @@
 
       <div class="skill-cat reveal">
         <div class="skill-cat-head"><i class="fas fa-language"></i> <span data-fr="Langues" data-en="Languages">Langues</span></div>
-        <div class="skill-tags">
-          <span class="stag">Français</span><span class="stag">Anglais</span><span class="stag">Arabe</span>
-        </div>
+        <ul class="lang-list">
+          <li><span class="lang-name" data-fr="Français" data-en="French">Français</span><span class="lang-level" data-fr="Courant" data-en="Fluent">Courant</span></li>
+          <li><span class="lang-name" data-fr="Anglais" data-en="English">Anglais</span><span class="lang-level" data-fr="Professionnel (B2/C1)" data-en="Professional (B2/C1)">Professionnel (B2/C1)</span></li>
+          <li><span class="lang-name" data-fr="Arabe" data-en="Arabic">Arabe</span><span class="lang-level" data-fr="Langue maternelle" data-en="Native language">Langue maternelle</span></li>
+        </ul>
       </div>
 
     </div>
@@ -973,6 +1011,7 @@
         <div class="soft-item"><i class="fas fa-person-walking"></i><span data-fr="Présence terrain &amp; sens du Gemba" data-en="Field presence &amp; Gemba mindset">Présence terrain &amp; sens du Gemba</span></div>
         <div class="soft-item"><i class="fas fa-arrows-rotate"></i><span data-fr="Adaptabilité &amp; autonomie" data-en="Adaptability &amp; autonomy">Adaptabilité &amp; autonomie</span></div>
         <div class="soft-item"><i class="fas fa-list-check"></i><span data-fr="Rigueur &amp; sens de l'organisation" data-en="Rigor &amp; organizational sense">Rigueur &amp; sens de l'organisation</span></div>
+        <div class="soft-item"><i class="fas fa-compass"></i><span data-fr="Leadership &amp; pilotage de projet" data-en="Leadership &amp; project management">Leadership &amp; pilotage de projet</span></div>
         <div class="soft-item"><i class="fas fa-users-gear"></i><span data-fr="Esprit d'amélioration continue" data-en="Continuous improvement mindset">Esprit d'amélioration continue</span></div>
       </div>
     </div>
@@ -1060,9 +1099,9 @@
     <h2 class="section-title reveal" data-fr="Travaillons ensemble" data-en="Let's work together">Travaillons ensemble</h2>
     <div class="contact-grid">
       <div class="contact-links reveal">
-        <a href="mailto:boussaadabde@gmail.com" class="contact-link-card">
+        <a href="mailto:abdeboussaadah@outlook.com" class="contact-link-card">
           <div class="clc-icon"><i class="fas fa-envelope"></i></div>
-          <div><div class="clc-label">Email</div><div class="clc-val">boussaadabde@gmail.com</div></div>
+          <div><div class="clc-label">Email</div><div class="clc-val">abdeboussaadah@outlook.com</div></div>
         </a>
         <a href="https://www.linkedin.com/in/boussaadah-abdessamad/" target="_blank" rel="noopener" class="contact-link-card">
           <div class="clc-icon"><i class="fab fa-linkedin"></i></div>
@@ -1080,7 +1119,7 @@
       <div class="contact-cta reveal">
         <h3 data-fr="Ouvert aux opportunités en Excellence Opérationnelle" data-en="Open to Operational Excellence opportunities">Ouvert aux opportunités en Excellence Opérationnelle</h3>
         <p data-fr="Je recherche mon premier CDI d'<strong>ingénieur en Excellence Opérationnelle / Amélioration Continue</strong> en région parisienne. Amélioration continue, Lean 6 Sigma, industrialisation : parlons-en." data-en="I'm looking for my first permanent position (CDI) as an <strong>Operational Excellence / Continuous Improvement engineer</strong> in the Paris area. Continuous improvement, Lean 6 Sigma, industrialization : let's talk.">Je recherche mon premier CDI d'<strong>ingénieur en Excellence Opérationnelle / Amélioration Continue</strong> en région parisienne. Amélioration continue, Lean 6 Sigma, industrialisation : parlons-en.</p>
-        <a href="mailto:boussaadabde@gmail.com" class="btn btn-primary" style="background:var(--sky);width:fit-content;"><i class="fas fa-paper-plane"></i> <span data-fr="M'envoyer un email" data-en="Send me an email">M'envoyer un email</span></a>
+        <a href="mailto:abdeboussaadah@outlook.com" class="btn btn-primary" style="background:var(--sky);width:fit-content;"><i class="fas fa-paper-plane"></i> <span data-fr="M'envoyer un email" data-en="Send me an email">M'envoyer un email</span></a>
       </div>
     </div>
   </div>
@@ -1125,7 +1164,7 @@
       <div class="edu-modal-loc" id="detailLocRow"><i class="fas fa-map-marker-alt"></i> <span id="detailLoc"></span></div>
     </div>
     <div class="edu-modal-body">
-      <img id="detailCover" class="detail-cover" alt="" style="display:none;" />
+      <div id="detailGallery" class="detail-gallery" style="display:none;"></div>
       <div class="edu-block" id="detailThesisBlock" style="display:none;">
         <div class="edu-block-head"><i class="fas fa-graduation-cap"></i> <span id="detailThesisLabel" data-fr="Sujet de thèse" data-en="Thesis subject">Sujet de thèse</span></div>
         <div class="detail-thesis-box" id="detailThesis"></div>
@@ -1944,7 +1983,6 @@
     ['Ranking damaged areas into three priority levels (A, B, C) based on pressure, wall flux and skin friction coefficient.',
      'Three solutions simulated: changing the angle worsens pressure and shear, while increasing the diameter from 300 to 340 mm reduces them.',
      'Two proposals: short term on the most critical area, long term on the three most damaged areas.']);
-  expById('Ciments').cover = 'assets/img/cfd.webp';
   addTo(expById('MAPAF'),
     ['Plaques de repérage par produit et cales de réglage pour supprimer les tâtonnements lors des réglages.'],
     ['Marking plates for each product and setting shims to remove trial and error during settings.']);
@@ -1966,10 +2004,120 @@
     ['Cas du cabinet Opti\'Consult (25 consultants), en équipe de six : WBS, macro-planning et RACI du projet, puis suivi par indicateurs.'],
     ['The Opti\'Consult firm case (25 consultants), in a team of six: project WBS, macro-planning and RACI, then KPI monitoring.']);
 
-  /* Images des projets */
-  [['Rescue Drone', 'drone'], ['AREAS', 'areas'], ['Eurofighter', 'cao-eurofighter'], ['tenségrité', 'cao-tensegrite'], ['BAe Hawk', 'cao-hawk'],
-   ['Train d\'atterrissage', 'cao-train'], ['SCARA', 'cao-scara'], ['4in1', 'cao-4in1'], ['Librae', 'librae']]
-    .forEach(([n, img]) => { projById(n).cover = 'assets/img/' + img + '.webp'; });
+  /* Stage MAPA (rapport de stage, ENSAM Rabat) */
+  experiences.splice(experiences.findIndex(e => e.company.includes('HIOLLE')) + 1, 0, {
+    company: 'MAPA Service Center',
+    icon: 'fa-plane',
+    logo: 'logo-mapa.png',
+    date: { fr: 'Mai 2024 → Juin 2024', en: 'May 2024 → June 2024' },
+    role: { fr: 'Stage technique : maintenance aéronautique et bureau technique', en: 'Technical internship : aircraft maintenance and technical office' },
+    loc: { fr: 'Aéroport de Benslimane, Maroc', en: 'Benslimane Airport, Morocco' },
+    thesisLabel: { fr: 'Sujet du stage', en: 'Internship subject' },
+    thesis: { fr: 'Découverte des opérations d\'un centre de maintenance aéronautique agréé et du rôle de son bureau technique, en deuxième année à l\'ENSAM Rabat.', en: 'Discovery of the operations of an approved aircraft maintenance centre and of the role of its technical office, during the second year at ENSAM Rabat.' },
+    items: {
+      fr: ['Immersion dans l\'atelier de maintenance avion, aux côtés des techniciens, des ingénieurs et des spécialistes de la maintenance.',
+           'Observation des inspections de routine, de la maintenance planifiée, des procédures de dépannage et des réparations.',
+           'Découverte de l\'atelier de révision des moteurs à pistons Lycoming et Continental : démontage, nettoyage, remontage et essais.',
+           'Découverte du bureau technique : analyse des travaux, cartes de travail, besoins en outillage et en matière, suivi des bases de données.',
+           'Étude de la documentation de maintenance (AMM, TSM, CMM, SRM, MPD, Service Bulletins) et de la réglementation (EASA Part-66, Part-145, Part-147, Part-21, FAA, DAC).'],
+      en: ['Immersion in the aircraft maintenance workshop, alongside technicians, engineers and maintenance specialists.',
+           'Observation of routine inspections, scheduled maintenance, troubleshooting procedures and repairs.',
+           'Discovery of the Lycoming and Continental piston engine overhaul workshop : disassembly, cleaning, reassembly and testing.',
+           'Discovery of the technical office : work analysis, job cards, tooling and material needs, database follow-up.',
+           'Study of maintenance documentation (AMM, TSM, CMM, SRM, MPD, Service Bulletins) and regulations (EASA Part-66, Part-145, Part-147, Part-21, FAA, DAC).']
+    },
+    tags: ['Maintenance aéronautique', 'Bureau technique', 'Documentation technique', 'EASA Part-66', 'EASA Part-145', 'FAA', 'Révision moteur', 'Traçabilité', 'Qualité et sécurité'],
+    docs: []
+  });
+
+  /* Projets issus du portfolio PDF */
+  projects.push({
+    category: 'conception', icon: 'fa-recycle', year: 'CAO',
+    name: { fr: 'Déchiqueteur de pneus', en: 'Tyre shredder' },
+    desc: { fr: 'Conception sur CATIA d\'un système mécanique destiné au déchiquetage de pneus usagés.', en: 'CATIA design of a mechanical system for shredding used tyres.' },
+    items: {
+      fr: ['Modélisation d\'un système de déchiquetage de pneus usagés sur CATIA.', 'Intégration de composants robustes : arbres dentés, rouleaux de coupe, système d\'entraînement et structure rigide.'],
+      en: ['Modeling of a used-tyre shredding system in CATIA.', 'Integration of robust components : toothed shafts, cutting rollers, drive system and rigid frame.']
+    },
+    tags: ['CATIA V5', 'Conception mécanique', 'Assemblage', 'Modélisation 3D'], docs: [],
+    gallery: [
+      { src: 'pneus-1', cap: { fr: 'Vue d\'ensemble', en: 'Overview' } },
+      { src: 'pneus-3', cap: { fr: 'Arbres et rouleaux de coupe', en: 'Shafts and cutting rollers' } },
+      { src: 'pneus-2', cap: { fr: 'Vues de l\'assemblage', en: 'Assembly views' } }]
+  });
+
+  /* Images des fiches : la première sert d'image principale */
+  const gal = (item, list) => { item.gallery = list.map(([src, fr, en]) => ({ src, cap: { fr, en } })); };
+  gal(expById('COTHERM'), [['cotherm-poste', 'Modèle 3D du poste réaménagé', '3D model of the redesigned workstation']]);
+  gal(expById('HIOLLE'), [['traction-1', 'Banc de traction, sous-ensembles', 'Tensile bench, subassemblies'], ['traction-2', 'Modèle CATIA du banc', 'CATIA model of the bench']]);
+  gal(expById('Ciments'), [['ciments-site', 'Le circuit sur site', 'The circuit on site'], ['ciments-cao', 'Modèle 3D du circuit', '3D model of the circuit'], ['ciments-cfd', 'Simulation : circuit original et solution', 'Simulation : original circuit and solution']]);
+  gal(projById('banc de tri'), [['banc-realisation', 'Le banc réalisé', 'The finished bench'], ['banc-cao', 'Modèle CATIA', 'CATIA model'], ['banc-plan', 'Plan d\'ensemble', 'General drawing']]);
+  gal(projById('Lathe milling'), [['fraisage-prototype', 'Le prototype usiné', 'The machined prototype'], ['fraisage-cao', 'Montage sur le tour', 'Mounting on the lathe'], ['fraisage-pieces', 'Les pièces du dispositif', 'The device parts']]);
+  gal(projById('Rescue Drone'), [['drone-1', 'Modèle 3D du drone', '3D model of the drone'], ['drone-2', 'Vue de dessus', 'Top view'], ['drone-3', 'Système de largage', 'Release system']]);
+  gal(projById('AREAS'), [['areas-prototype', 'Le tracker imprimé', 'The printed tracker'], ['areas-cao', 'Modèle SolidWorks', 'SolidWorks model'], ['areas-detail', 'Détail de la collerette', 'Collar detail']]);
+  gal(projById('séchage'), [['sechage-scan', 'Scan 3D du dos', '3D scan of the back']]);
+  gal(projById('Eurofighter'), [['euro-1', 'Structure de l\'avion', 'Aircraft structure'], ['euro-2', 'Vue de dessus', 'Top view'], ['euro-3', 'Surfaces et Power Copy', 'Surfaces and Power Copy']]);
+  gal(projById('tenségrité'), [['tens-photo', 'Structure réalisée', 'The built structure'], ['tens-cao', 'Modèle CATIA', 'CATIA model'], ['tens-vues', 'Vues du modèle paramétré', 'Parametric model views']]);
+  gal(projById('BAe Hawk'), [['hawk-1', 'Surface extérieure', 'Outer skin'], ['hawk-2', 'Structure en Power Copy', 'Power Copy structure'], ['hawk-3', 'Plan de référence', 'Reference drawing']]);
+  gal(projById('Train d\'atterrissage'), [['a380-1', 'Assemblage du train A380', 'A380 gear assembly'], ['a380-2', 'Essieux et vérins', 'Axles and cylinders'], ['a380-3', 'Intégration dans le fuselage', 'Fuselage integration']]);
+  gal(projById('SCARA'), [['scara-1', 'Bras et pince', 'Arm and gripper'], ['scara-2', 'Autre vue du bras', 'Another view of the arm'], ['scara-3', 'Trois axes verticaux', 'Three vertical axes']]);
+  gal(projById('4in1'), [['cao-4in1', 'Modèle de la machine', 'Machine model']]);
+  gal(projById('Librae'), [['librae', 'Étude Librae', 'Librae study']]);
+  gal(projById('Guide de gestion'), [['opticonsult', 'Cas du cabinet Opti\'Consult', 'The Opti\'Consult firm case']]);
+
+  function imgSrc(g) { return 'assets/img/' + g.src + '.webp'; }
+  function cardMosaic(item) {
+    const g = (item.gallery || []).slice(0, 3);
+    if (!g.length) return '';
+    return '<div class="proj-mosaic n' + g.length + '">' + g.map(x => '<img loading="lazy" src="' + imgSrc(x) + '" alt="' + L(x.cap).replace(/"/g, '&quot;') + '" />').join('') + '</div>';
+  }
+  function cardThumbs(item) {
+    const g = (item.gallery || []).slice(0, 3);
+    if (!g.length) return '';
+    return '<div class="tl-thumbs">' + g.map(x => '<img loading="lazy" src="' + imgSrc(x) + '" alt="' + L(x.cap).replace(/"/g, '&quot;') + '" />').join('') + '</div>';
+  }
+
+  /* Agrandissement des images */
+  const lb = { el: null, list: [], i: 0, back: null };
+  function lbShow() {
+    const g = lb.list[lb.i];
+    lb.el.querySelector('img').src = imgSrc(g);
+    lb.el.querySelector('img').alt = L(g.cap);
+    lb.el.querySelector('.lb-cap').textContent = L(g.cap);
+    const many = lb.list.length > 1;
+    lb.el.querySelector('.lb-prev').style.display = many ? '' : 'none';
+    lb.el.querySelector('.lb-next').style.display = many ? '' : 'none';
+  }
+  function lbClose() { lb.el.classList.remove('open'); if (lb.back) lb.back.focus(); }
+  function lbMove(d) { lb.i = (lb.i + d + lb.list.length) % lb.list.length; lbShow(); }
+  function openLightbox(i, btn) {
+    if (!lb.el) {
+      lb.el = document.createElement('div');
+      lb.el.className = 'lb';
+      lb.el.setAttribute('role', 'dialog');
+      lb.el.setAttribute('aria-modal', 'true');
+      lb.el.innerHTML = '<button type="button" class="lb-close" aria-label="Fermer / Close"><i class="fas fa-xmark"></i></button>' +
+        '<button type="button" class="lb-prev" aria-label="Image précédente / Previous image"><i class="fas fa-chevron-left"></i></button>' +
+        '<button type="button" class="lb-next" aria-label="Image suivante / Next image"><i class="fas fa-chevron-right"></i></button>' +
+        '<img alt="" /><div class="lb-cap"></div>';
+      document.body.appendChild(lb.el);
+      lb.el.addEventListener('click', e => { if (e.target === lb.el) lbClose(); });
+      lb.el.querySelector('.lb-close').addEventListener('click', lbClose);
+      lb.el.querySelector('.lb-prev').addEventListener('click', () => lbMove(-1));
+      lb.el.querySelector('.lb-next').addEventListener('click', () => lbMove(1));
+      document.addEventListener('keydown', e => {
+        if (!lb.el.classList.contains('open')) return;
+        if (e.key === 'Escape') { e.stopPropagation(); lbClose(); }
+        else if (e.key === 'ArrowLeft') lbMove(-1);
+        else if (e.key === 'ArrowRight') lbMove(1);
+      }, true);
+    }
+    const d = currentDetail.type === 'exp' ? experiences[currentDetail.i] : projects[currentDetail.i];
+    lb.list = d.gallery; lb.i = i; lb.back = btn;
+    lbShow();
+    lb.el.classList.add('open');
+    lb.el.querySelector('.lb-close').focus();
+  }
 
   /* Documents : aucun sur les expériences pour l'instant ; sur les projets, un emplacement privé sans lien */
   experiences.forEach(e => { e.docs = []; });
@@ -2022,6 +2170,7 @@
           '<div class="tl-role">' + L(e.role) + '</div>' +
           '<div class="tl-loc"><i class="fas fa-map-marker-alt"></i>' + L(e.loc) + '</div>' +
           '<div class="proj-tags tl-tags">' + cardTags(e.tags, 7) + '</div>' +
+          cardThumbs(e) +
           '<span class="card-more">' + (currentLang === 'fr' ? 'Voir le détail' : 'View details') + ' <i class="fas fa-arrow-right"></i></span>' +
         '</div></div>';
     }).join('');
@@ -2041,7 +2190,7 @@
     grid.innerHTML = cards.map(({ p, i }) => {
       const badge = p.docs && p.docs.length ? '<span class="doc-count"><i class="fas fa-lock"></i></span>' : '';
       const tags = cardTags(p.tags, 7);
-      const cover = p.cover ? '<img class="proj-cover" loading="lazy" src="' + p.cover + '" alt="" />' : '';
+      const cover = cardMosaic(p);
       return '<div class="proj-card reveal" tabindex="0" role="button" onclick="openDetail(\'proj\',' + i + ')" onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();openDetail(\'proj\',' + i + ')}">' +
         cover + '<div class="proj-top"><div class="proj-icon"><i class="fas ' + p.icon + '"></i></div>' +
         '<span class="proj-year">' + p.year + '</span></div>' +
@@ -2080,7 +2229,7 @@
     return '<div class="edu-doc locked"><span class="edu-doc-icon lock"><i class="fas fa-lock"></i></span>' +
       '<span class="edu-doc-txt"><div class="edu-doc-name">' + (fr ? 'Dossier du projet en accès privé' : 'Private project file') + '</div>' +
       '<div class="edu-doc-sub">' + (fr ? 'Consultation et téléchargement réservés' : 'Viewing and download restricted') + '</div></span></div>' +
-      '<a class="doc-request" href="mailto:boussaadabde@gmail.com?subject=' + subject + '">' + (fr ? 'Demander le dossier par email' : 'Request the file by email') + '</a>';
+      '<a class="doc-request" href="mailto:abdeboussaadah@outlook.com?subject=' + subject + '">' + (fr ? 'Demander le dossier par email' : 'Request the file by email') + '</a>';
   }
 
   function openDocViewer(di) {
@@ -2162,8 +2311,12 @@
     document.getElementById('detailTags').innerHTML = (d.tags || []).map(t => '<span>' + t + '</span>').join('');
     document.getElementById('detailDocs').innerHTML = buildDocs(d.docs, d);
     document.getElementById('detailDocs').closest('.edu-block').style.display = (d.docs && d.docs.length) ? '' : 'none';
-    const cover = document.getElementById('detailCover');
-    if (d.cover) { cover.src = d.cover; cover.style.display = ''; } else { cover.removeAttribute('src'); cover.style.display = 'none'; }
+    const gallery = document.getElementById('detailGallery');
+    const pics = d.gallery || [];
+    gallery.className = 'detail-gallery n' + Math.min(pics.length, 3);
+    gallery.style.display = pics.length ? '' : 'none';
+    gallery.innerHTML = pics.slice(0, 3).map((g, k) => '<button type="button" class="dg-item" onclick="openLightbox(' + k + ', this)" aria-label="' + (currentLang === 'fr' ? 'Agrandir : ' : 'Enlarge: ') + L(g.cap).replace(/"/g, '&quot;') + '">' +
+      '<img src="' + imgSrc(g) + '" alt="' + L(g.cap).replace(/"/g, '&quot;') + '" /><span>' + L(g.cap) + '</span></button>').join('');
     const extraBlock = document.getElementById('detailExtraBlock');
     if (d.extra) {
       document.getElementById('detailExtra').innerHTML = L(d.extra);
