@@ -43,7 +43,7 @@
         '<button type="button" class="vsm-box" data-edu="' + f.edu + '"><strong>' + i18nFlow[i][0] + '</strong><span>' + i18nFlow[i][1] + '</span></button>' +
         '<ul class="vsm-data">' + items + '</ul></li>';
     }).join('');
-    html += '<li class="vsm-step vsm-kaizen"><a href="#contact"><strong>' + t('Votre poste ?', 'Your role?') + '</strong><span>' + t('Premier CDI, excellence opérationnelle', 'First permanent job, operational excellence') + '</span></a></li>';
+    html += '<li class="vsm-step vsm-kaizen"><a href="#contact"><strong>' + t('Votre poste ?', 'Your role?') + '</strong><span>' + t('Premier CDI, excellence opérationnelle', 'First permanent job, operational excellence') + '</span></a></li>';
     $('vsm').innerHTML = html;
   }
 
