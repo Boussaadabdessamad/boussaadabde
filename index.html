@@ -743,6 +743,17 @@
       .hero-desc { margin-left: auto; margin-right: auto; }
       .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     }
+
+    /* Compléments : images et compétences sur les cartes */
+    .tl-tags { margin-top: .9rem; }
+    .proj-cover { display: block; width: calc(100% + 3.8rem); max-width: none; margin: -1.9rem -1.9rem 1.3rem; height: 190px; object-fit: contain; background: var(--bg2); border-bottom: 1px solid var(--border); }
+    .edu-card .proj-tags { margin-top: .8rem; }
+    .detail-cover { display: block; width: 100%; max-height: 320px; object-fit: contain; background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 1.2rem; }
+    .edu-doc.locked { cursor: default; }
+    .edu-doc.locked:hover { border-color: var(--border); transform: none; background: inherit; }
+    .edu-doc-icon.lock { background: var(--navy); }
+    .doc-request { display: inline-block; margin-top: .7rem; font-size: .85rem; font-weight: 600; color: var(--sky-dark); }
+    .footer-private { display: block; margin-top: .4rem; font-size: .75rem; color: inherit; opacity: .6; }
   </style>
 </head>
 <body>
@@ -910,14 +921,14 @@
       <div class="skill-cat reveal">
         <div class="skill-cat-head"><i class="fas fa-chart-line"></i> <span data-fr="Lean &amp; Excellence Opérationnelle" data-en="Lean &amp; Operational Excellence">Lean &amp; Excellence Opérationnelle</span></div>
         <div class="skill-tags">
-          <span class="stag">Lean Manufacturing</span><span class="stag">Lean Office</span><span class="stag">DMAIC</span><span class="stag">VSM</span><span class="stag">5S</span><span class="stag">SMED</span><span class="stag">Kaizen</span><span class="stag">PDCA</span><span class="stag">A3</span><span class="stag">Ishikawa</span><span class="stag">Pareto</span><span class="stag">AMDEC</span><span class="stag">Amélioration continue</span>
+          <span class="stag">Lean Manufacturing</span><span class="stag">Lean Office</span><span class="stag">DMAIC</span><span class="stag">VSM</span><span class="stag">5S</span><span class="stag">SMED</span><span class="stag">Kaizen</span><span class="stag">PDCA</span><span class="stag">A3</span><span class="stag">Ishikawa</span><span class="stag">Pareto</span><span class="stag">AMDEC</span><span class="stag">Amélioration continue</span><span class="stag">SIPOC</span><span class="stag">Gemba</span><span class="stag">5 Pourquoi</span><span class="stag">Kanban</span><span class="stag">Poka-Yoke</span><span class="stag">Management visuel</span><span class="stag">7M</span><span class="stag">8D</span><span class="stag">TPM</span>
         </div>
       </div>
 
       <div class="skill-cat reveal">
         <div class="skill-cat-head"><i class="fas fa-gears"></i> <span data-fr="Industrialisation &amp; maintenance" data-en="Industrialization &amp; maintenance">Industrialisation &amp; maintenance</span></div>
         <div class="skill-tags">
-          <span class="stag">Modes opératoires</span><span class="stag">Gammes</span><span class="stag">Implantation industrielle</span><span class="stag">Optimisation des flux</span><span class="stag">Charge / Capacité</span><span class="stag">Ergonomie industrielle</span><span class="stag">Maintenance préventive</span><span class="stag">Plan de maintenance</span><span class="stag">Analyse de criticité</span><span class="stag">Fiabilité des équipements</span><span class="stag">Gestion des PDR</span><span class="stag">KPI maintenance</span>
+          <span class="stag">Modes opératoires</span><span class="stag">Gammes</span><span class="stag">Implantation industrielle</span><span class="stag">Optimisation des flux</span><span class="stag">Charge / Capacité</span><span class="stag">Ergonomie industrielle</span><span class="stag">Maintenance préventive</span><span class="stag">Plan de maintenance</span><span class="stag">Analyse de criticité</span><span class="stag">Fiabilité des équipements</span><span class="stag">Gestion des PDR</span><span class="stag">KPI maintenance</span><span class="stag">PDP / CBN</span><span class="stag">Make or Buy</span><span class="stag">Plan de validation</span><span class="stag">Capabilité (Cp / Cpk)</span><span class="stag">Ergonomie RULA</span><span class="stag">ISO 13485</span>
         </div>
       </div>
 
@@ -938,7 +949,7 @@
       <div class="skill-cat reveal">
         <div class="skill-cat-head"><i class="fas fa-magnifying-glass-chart"></i> <span data-fr="Données, projet &amp; stratégie" data-en="Data, project &amp; strategy">Données, projet &amp; stratégie</span></div>
         <div class="skill-tags">
-          <span class="stag">Power BI</span><span class="stag">Excel avancé</span><span class="stag">Python</span><span class="stag">Tableaux de bord</span><span class="stag">KPI industriels</span><span class="stag">Gestion de projet</span><span class="stag">Diagramme de Gantt</span><span class="stag">WBS</span><span class="stag">RACI</span><span class="stag">Cahier des charges</span><span class="stag">Stratégie industrielle</span><span class="stag">Make or Buy</span><span class="stag">Benchmark</span>
+          <span class="stag">Power BI</span><span class="stag">Excel avancé</span><span class="stag">Python</span><span class="stag">Tableaux de bord</span><span class="stag">KPI industriels</span><span class="stag">Gestion de projet</span><span class="stag">Diagramme de Gantt</span><span class="stag">WBS</span><span class="stag">RACI</span><span class="stag">Cahier des charges</span><span class="stag">Stratégie industrielle</span><span class="stag">Make or Buy</span><span class="stag">Benchmark</span><span class="stag">Power Query</span><span class="stag">SharePoint</span><span class="stag">Minitab</span><span class="stag">PESTEL / SWOT</span><span class="stag">Matrice des risques</span><span class="stag">Conduite du changement</span>
         </div>
       </div>
 
@@ -985,7 +996,7 @@
       </div>
 
       <div class="edu-card reveal" tabindex="0" role="button" aria-label="Grenoble INP" onclick="openEdu('grenoble')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openEdu('grenoble')}">
-        <div class="edu-year" data-fr="Échange académique" data-en="Academic exchange">Échange académique</div>
+        <div class="edu-year" data-fr="2024-2025" data-en="2024-2025">2024-2025</div>
         <div class="edu-school">Grenoble INP</div>
         <div class="edu-degree" data-fr="Échange international : École de Génie Industriel (Génie Industriel)" data-en="International exchange : School of Industrial Engineering (Industrial Engineering)">Échange international : École de Génie Industriel (Génie Industriel)</div>
         <div class="edu-loc"><i class="fas fa-map-marker-alt"></i>Grenoble, France</div>
@@ -993,9 +1004,9 @@
       </div>
 
       <div class="edu-card reveal" tabindex="0" role="button" aria-label="ENSAM Rabat" onclick="openEdu('ensam')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openEdu('ensam')}">
-        <div class="edu-year" data-fr="Cycle ingénieur" data-en="Engineering cycle">Cycle ingénieur</div>
+        <div class="edu-year" data-fr="2022-2025" data-en="2022-2025">2022-2025</div>
         <div class="edu-school">ENSAM Rabat</div>
-        <div class="edu-degree" data-fr="Diplôme d'ingénieur d'État : Ingénierie de Conception et Production (ICP)" data-en="State engineering degree : Design and Production Engineering (ICP)">Diplôme d'ingénieur d'État : Ingénierie de Conception et Production (ICP)</div>
+        <div class="edu-degree" data-fr="Diplôme d'ingénieur : Ingénierie mécanique pour l'industrie aéronautique" data-en="Engineering degree : Mechanical engineering for the aeronautics industry">Diplôme d'ingénieur : Ingénierie mécanique pour l'industrie aéronautique</div>
         <div class="edu-loc"><i class="fas fa-map-marker-alt"></i><span data-fr="Rabat, Maroc" data-en="Rabat, Morocco">Rabat, Maroc</span></div>
         <span class="edu-more"><i class="fas fa-arrow-right"></i></span>
       </div>
@@ -1003,7 +1014,7 @@
       <div class="edu-card reveal" tabindex="0" role="button" aria-label="EST" onclick="openEdu('est')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openEdu('est')}">
         <div class="edu-year" data-fr="2020-2022" data-en="2020-2022">2020-2022</div>
         <div class="edu-school" data-fr="École Supérieure de Technologie de Casablanca (EST)" data-en="Higher School of Technology of Casablanca (EST)">École Supérieure de Technologie de Casablanca (EST)</div>
-        <div class="edu-degree" data-fr="DUT : Génie Mécanique et Productique (GMP)" data-en="Technical degree (DUT) : Mechanical and Production Engineering">DUT : Génie Mécanique et Productique (GMP)</div>
+        <div class="edu-degree" data-fr="DUT : Génie Mécanique et Productique (GMP), top 8 % de la promotion" data-en="Technical degree (DUT) : Mechanical and Production Engineering, top 8% of the class">DUT : Génie Mécanique et Productique (GMP), top 8 % de la promotion</div>
         <div class="edu-loc"><i class="fas fa-map-marker-alt"></i><span data-fr="Casablanca, Maroc" data-en="Casablanca, Morocco">Casablanca, Maroc</span></div>
         <span class="edu-more"><i class="fas fa-arrow-right"></i></span>
       </div>
@@ -1023,7 +1034,7 @@
       <div class="certs-row">
         <div class="cert-badge reveal">
           <i class="fas fa-certificate"></i>
-          <div><div class="ct">Lean Six Sigma</div><span data-fr="Green / Black Belt (CESI)" data-en="Green / Black Belt (CESI)">Green / Black Belt (CESI)</span></div>
+          <div><div class="ct">Black Belt Lean Six Sigma Industrie</div><span data-fr="826/1000, CESI Certification et UL6S, norme AFNOR NF X06-091:2025, n° L6S-13804, sept. 2026" data-en="826/1000, CESI Certification and UL6S, AFNOR NF X06-091:2025 standard, no. L6S-13804, Sept. 2026">826/1000, CESI Certification et UL6S, norme AFNOR NF X06-091:2025, n° L6S-13804, sept. 2026</span></div>
         </div>
         <div class="cert-badge reveal">
           <i class="fas fa-award"></i>
@@ -1114,6 +1125,7 @@
       <div class="edu-modal-loc" id="detailLocRow"><i class="fas fa-map-marker-alt"></i> <span id="detailLoc"></span></div>
     </div>
     <div class="edu-modal-body">
+      <img id="detailCover" class="detail-cover" alt="" style="display:none;" />
       <div class="edu-block" id="detailThesisBlock" style="display:none;">
         <div class="edu-block-head"><i class="fas fa-graduation-cap"></i> <span id="detailThesisLabel" data-fr="Sujet de thèse" data-en="Thesis subject">Sujet de thèse</span></div>
         <div class="detail-thesis-box" id="detailThesis"></div>
@@ -1163,6 +1175,7 @@
 
 <footer>
   <p data-fr="Conçu &amp; développé par <span>Abdessamad Boussaadah</span> · Ingénieur Excellence Opérationnelle · Paris, France" data-en="Designed &amp; built by <span>Abdessamad Boussaadah</span> · Operational Excellence Engineer · Paris, France">Conçu &amp; développé par <span>Abdessamad Boussaadah</span> · Ingénieur Excellence Opérationnelle · Paris, France</p>
+  <a class="footer-private" href="espace-prive.html" rel="nofollow" data-fr="Espace privé" data-en="Private area">Espace privé</a>
 </footer>
 
 <script>
@@ -1298,7 +1311,7 @@
     ensam: {
       year: { fr: 'Cycle ingénieur', en: 'Engineering cycle' },
       school: 'ENSAM Rabat',
-      degree: { fr: 'Diplôme d\'ingénieur d\'État : filière Ingénierie de Conception et Production (ICP)', en: 'State engineering degree : Design and Production Engineering (ICP) track' },
+      degree: { fr: 'Diplôme d\'ingénieur : Ingénierie mécanique pour l\'industrie aéronautique', en: 'Engineering degree : Mechanical engineering for the aeronautics industry' },
       loc: { fr: 'Rabat, Maroc', en: 'Rabat, Morocco' },
       courses: {
         fr: ['Conception mécanique &amp; CAO', 'Dessin industriel &amp; modélisation 3D', 'Résistance des matériaux &amp; calcul des structures (éléments finis)', 'Procédés de fabrication, CFAO &amp; métrologie', 'Fabrication additive', 'Sciences des matériaux (métaux, polymères, composites)', 'Mécanique des fluides &amp; transferts thermiques', 'Automatismes industriels &amp; asservissement (API)', 'Management industriel (qualité, gestion de production, maintenance)', 'Fondamentaux de l\'aéronautique', 'Projet de fin d\'études'],
@@ -2398,6 +2411,74 @@
     // ,{ category:'conception', icon:'fa-industry', year:'', name:{fr:'',en:''}, desc:{fr:'',en:''}, items:{fr:[''],en:['']}, tags:[''], docs:[] }
   ];
 
+  /* ── Compléments issus des documents du dossier Drive ── */
+  const expById = n => experiences.find(e => e.company.includes(n));
+  const projById = n => projects.find(p => p.name.fr.includes(n));
+  function addTo(o, fr, en, tags) {
+    o.items.fr.push(...fr); o.items.en.push(...en);
+    if (tags) o.tags = (o.tags || []).concat(tags.filter(t => !(o.tags || []).includes(t)));
+  }
+  addTo(expById('SNCF'),
+    ['Observation du travail réel (Gemba) et questionnaire auprès des gestionnaires pour mesurer l\'écart entre le processus décrit et le processus vécu.',
+     'Benchmarks auprès d\'autres unités SNCF et d\'acteurs externes, et état de l\'art scientifique et normatif.',
+     'Diagnostic stratégique PESTEL et SWOT, étude de faisabilité et matrice des risques des solutions proposées.',
+     'Plan d\'action en sept axes : standardiser, planifier, centraliser, réorganiser par portefeuille, digitaliser, assister par l\'IA et mesurer.',
+     'Conduite du changement sur le déploiement d\'un outil de pilotage unifié : parties prenantes, résistances, 5 Pourquoi et plan d\'action managérial.',
+     'Thèse professionnelle soutenue le 12 octobre 2026.'],
+    ['Observing real work (Gemba) and surveying recruitment officers to measure the gap between the described process and the lived one.',
+     'Benchmarks with other SNCF units and external organisations, plus a review of scientific and standards literature.',
+     'PESTEL and SWOT strategic diagnosis, feasibility study and risk matrix for the proposed solutions.',
+     'Seven-axis action plan: standardise, plan, centralise, reorganise by portfolio, digitise, assist with AI and measure.',
+     'Change management for the rollout of a unified steering tool: stakeholders, resistance, 5 Whys and a managerial action plan.',
+     'Professional thesis defended on 12 October 2026.'],
+    ['PESTEL', 'SWOT', 'Conduite du changement', 'PDP / CBN']);
+  addTo(expById('COTHERM'),
+    ['Deux scénarios comparés : réaménagement mécanique du poste (vérin intégré, plan de travail, chariots réglables) ou changement de procédé supprimant l\'écrasement.',
+     'Simulations statiques et dynamiques des pièces de maintien sous SolidWorks.'],
+    ['Two scenarios compared: mechanical redesign of the workstation (integrated cylinder, work surface, adjustable carts) or a process change removing the crushing step.',
+     'Static and dynamic simulations of the holding parts in SolidWorks.']);
+  addTo(expById('STMicroelectronics'),
+    ['Pilotage par jalons Go/No-Go et définition des paramètres de production.', 'Méthodes 7M et 8D pour sécuriser la qualité industrielle.'],
+    ['Project management through Go/No-Go milestones and definition of production parameters.', '7M and 8D methods to secure industrial quality.'],
+    ['Go/No-Go', '7M', '8D']);
+  addTo(expById('Ciments'),
+    ['Classement des zones endommagées en trois niveaux de priorité (A, B, C) selon la pression, le flux sur les parois et le coefficient de frottement.',
+     'Trois solutions simulées : changer l\'angle aggrave la pression et le cisaillement, alors qu\'augmenter le diamètre de 300 à 340 mm les réduit.',
+     'Deux propositions : à court terme sur la zone la plus critique, à long terme sur les trois zones les plus endommagées.'],
+    ['Ranking damaged areas into three priority levels (A, B, C) based on pressure, wall flux and skin friction coefficient.',
+     'Three solutions simulated: changing the angle worsens pressure and shear, while increasing the diameter from 300 to 340 mm reduces them.',
+     'Two proposals: short term on the most critical area, long term on the three most damaged areas.']);
+  expById('Ciments').cover = 'assets/img/cfd.webp';
+  addTo(expById('MAPAF'),
+    ['Plaques de repérage par produit et cales de réglage pour supprimer les tâtonnements lors des réglages.'],
+    ['Marking plates for each product and setting shims to remove trial and error during settings.']);
+  addTo(projById('Rescue Drone'),
+    ['Capteurs intégrés : GPS, accéléromètre, gyroscope, altimètre, caméra FPV, capteur de courant et de tension. Charge supplémentaire de 3 kg.',
+     'Bouée autogonflable : coût de production ramené de 3 000 à 200 MAD. Investissement d\'environ 5 000 MAD, estimé à 9 000 MAD pour la version finale.'],
+    ['Built-in sensors: GPS, accelerometer, gyroscope, altimeter, FPV camera, current and voltage sensor. Extra payload of 3 kg.',
+     'Self-inflating buoy: production cost brought down from 3,000 to 200 MAD. Investment of about 5,000 MAD, estimated at 9,000 MAD for the final version.']);
+  addTo(projById('AREAS'),
+    ['Comparaison de trois collerettes (poids, facilité de peinture, qualité de sphère, angle) et de deux maillages (triangulaire et polygonal).'],
+    ['Comparison of three collars (weight, ease of painting, sphere quality, angle) and of two lattices (triangular and polygonal).']);
+  addTo(projById('séchage'),
+    ['Coût total estimé à 45,4 € : 13,1 € de prototypage et 32,3 € de design et de recherche.'],
+    ['Total estimated cost of €45.4: €13.1 for prototyping and €32.3 for design and research.']);
+  addTo(projById('banc de tri'),
+    ['Composants retenus : moteurs LS 90 L (370 W) et LS 71 L (90 W), vérin HE-08, paliers UCP 204. Coût global du système d\'environ 18 500 MAD.'],
+    ['Selected components: LS 90 L (370 W) and LS 71 L (90 W) motors, HE-08 cylinder, UCP 204 bearings. Overall system cost of about 18,500 MAD.']);
+  addTo(projById('Guide de gestion'),
+    ['Cas du cabinet Opti\'Consult (25 consultants), en équipe de six : WBS, macro-planning et RACI du projet, puis suivi par indicateurs.'],
+    ['The Opti\'Consult firm case (25 consultants), in a team of six: project WBS, macro-planning and RACI, then KPI monitoring.']);
+
+  /* Images des projets */
+  [['Rescue Drone', 'drone'], ['AREAS', 'areas'], ['Eurofighter', 'cao-eurofighter'], ['tenségrité', 'cao-tensegrite'], ['BAe Hawk', 'cao-hawk'],
+   ['Train d\'atterrissage', 'cao-train'], ['SCARA', 'cao-scara'], ['4in1', 'cao-4in1'], ['Librae', 'librae']]
+    .forEach(([n, img]) => { projById(n).cover = 'assets/img/' + img + '.webp'; });
+
+  /* Documents : aucun sur les expériences pour l'instant ; sur les projets, un emplacement privé sans lien */
+  experiences.forEach(e => { e.docs = []; });
+  projects.forEach(p => { p.docs = p.category === 'conception' ? [] : [{ private: true }]; });
+
   let currentProjFilter = 'realise';
 
   const docMeta = {
@@ -2410,11 +2491,29 @@
   /* ── Rendu des cartes ── */
   function L(v) { return (v && typeof v === 'object') ? (v[currentLang] || v.fr) : v; }
 
+  function cardTags(list, max) {
+    const all = list || [];
+    const more = all.length > max ? '<span class="tag">+' + (all.length - max) + '</span>' : '';
+    return all.slice(0, max).map((t, k) => '<span class="tag' + (k < 2 ? ' sky' : '') + '">' + t + '</span>').join('') + more;
+  }
+
+  function renderEduTags() {
+    document.querySelectorAll('.edu-card').forEach(card => {
+      const m = (card.getAttribute('onclick') || '').match(/openEdu\('(\w+)'\)/);
+      const d = m && eduData[m[1]];
+      if (!d) return;
+      let box = card.querySelector('.proj-tags');
+      if (!box) { box = document.createElement('div'); box.className = 'proj-tags'; card.insertBefore(box, card.querySelector('.edu-more')); }
+      box.innerHTML = cardTags(d.skills[currentLang] || d.skills.fr, 5);
+    });
+  }
+
   function renderExperiences() {
+    renderEduTags();
     const tl = document.getElementById('timeline');
     if (!tl) return;
     tl.innerHTML = experiences.map((e, i) => {
-      const badge = e.docs && e.docs.length ? '<span class="doc-count"><i class="fas fa-paperclip"></i>' + e.docs.length + '</span>' : '';
+      const badge = e.docs && e.docs.length ? '<span class="doc-count"><i class="fas fa-lock"></i></span>' : '';
       const logo = e.logo ? '<span class="tl-logo"><img src="' + e.logo + '" alt="' + e.company + '" /></span>' : '';
       return '<div class="tl-item reveal">' +
         '<div class="tl-dot"></div>' +
@@ -2426,6 +2525,7 @@
           '</div>' +
           '<div class="tl-role">' + L(e.role) + '</div>' +
           '<div class="tl-loc"><i class="fas fa-map-marker-alt"></i>' + L(e.loc) + '</div>' +
+          '<div class="proj-tags tl-tags">' + cardTags(e.tags, 7) + '</div>' +
           '<span class="card-more">' + (currentLang === 'fr' ? 'Voir le détail' : 'View details') + ' <i class="fas fa-arrow-right"></i></span>' +
         '</div></div>';
     }).join('');
@@ -2443,10 +2543,11 @@
       return;
     }
     grid.innerHTML = cards.map(({ p, i }) => {
-      const badge = p.docs && p.docs.length ? '<span class="doc-count"><i class="fas fa-paperclip"></i>' + p.docs.length + '</span>' : '';
-      const tags = (p.tags || []).slice(0, 4).map((t, k) => '<span class="tag' + (k < 2 ? ' sky' : '') + '">' + t + '</span>').join('');
+      const badge = p.docs && p.docs.length ? '<span class="doc-count"><i class="fas fa-lock"></i></span>' : '';
+      const tags = cardTags(p.tags, 7);
+      const cover = p.cover ? '<img class="proj-cover" loading="lazy" src="' + p.cover + '" alt="" />' : '';
       return '<div class="proj-card reveal" tabindex="0" role="button" onclick="openDetail(\'proj\',' + i + ')" onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();openDetail(\'proj\',' + i + ')}">' +
-        '<div class="proj-top"><div class="proj-icon"><i class="fas ' + p.icon + '"></i></div>' +
+        cover + '<div class="proj-top"><div class="proj-icon"><i class="fas ' + p.icon + '"></i></div>' +
         '<span class="proj-year">' + p.year + '</span></div>' +
         '<div class="proj-name">' + L(p.name) + badge + '</div>' +
         '<div class="proj-desc">' + L(p.desc) + '</div>' +
@@ -2475,27 +2576,17 @@
   let currentDetail = null;
   const detailModal = document.getElementById('detailModal');
 
-  function buildDocs(docs) {
-    if (!docs || !docs.length) {
-      return '<p class="edu-empty">' + (currentLang === 'fr' ? 'Aucun document pour le moment.' : 'No document yet.') + '</p>';
-    }
-    return docs.map((d, di) => {
-      const m = docMeta[d.type] || docMeta.doc;
-      const isReal = d.href && d.href !== '#';
-      const tag = isReal ? 'a' : 'span';
-      const attrs = isReal
-        ? ' href="' + d.href + '" onclick="openDocViewer(' + di + ');return false;"'
-        : ' style="cursor:default;opacity:.7"';
-      return '<' + tag + ' class="edu-doc"' + attrs + '>' +
-        '<span class="edu-doc-icon ' + m.cls + '"><i class="fas ' + m.icon + '"></i></span>' +
-        '<span class="edu-doc-txt"><span class="edu-doc-name">' + L(d.name) + '</span>' +
-        (d.sub ? '<span class="edu-doc-sub">' + L(d.sub) + '</span>' : '') + '</span>' +
-        '<span class="edu-doc-go"><i class="fas fa-' + (isReal ? 'eye' : 'hourglass-half') + '"></i></span>' +
-        '</' + tag + '>';
-    }).join('');
+  function buildDocs(docs, item) {
+    if (!docs || !docs.length) return '';
+    const fr = currentLang === 'fr';
+    const name = item ? (item.name ? L(item.name) : item.company) : '';
+    const subject = encodeURIComponent((fr ? 'Demande de dossier : ' : 'File request: ') + name);
+    return '<div class="edu-doc locked"><span class="edu-doc-icon lock"><i class="fas fa-lock"></i></span>' +
+      '<span class="edu-doc-txt"><div class="edu-doc-name">' + (fr ? 'Dossier du projet en accès privé' : 'Private project file') + '</div>' +
+      '<div class="edu-doc-sub">' + (fr ? 'Consultation et téléchargement réservés' : 'Viewing and download restricted') + '</div></span></div>' +
+      '<a class="doc-request" href="mailto:boussaadabde@gmail.com?subject=' + subject + '">' + (fr ? 'Demander le dossier par email' : 'Request the file by email') + '</a>';
   }
 
-  /* Visionneuse de document intégrée (reste dans la carte) */
   function openDocViewer(di) {
     if (!currentDetail) return;
     const d = currentDetail.type === 'exp' ? experiences[currentDetail.i] : projects[currentDetail.i];
@@ -2573,7 +2664,10 @@
     }
     document.getElementById('detailItems').innerHTML = (d.items[currentLang] || d.items.fr).map(x => '<li>' + x + '</li>').join('');
     document.getElementById('detailTags').innerHTML = (d.tags || []).map(t => '<span>' + t + '</span>').join('');
-    document.getElementById('detailDocs').innerHTML = buildDocs(d.docs);
+    document.getElementById('detailDocs').innerHTML = buildDocs(d.docs, d);
+    document.getElementById('detailDocs').closest('.edu-block').style.display = (d.docs && d.docs.length) ? '' : 'none';
+    const cover = document.getElementById('detailCover');
+    if (d.cover) { cover.src = d.cover; cover.style.display = ''; } else { cover.removeAttribute('src'); cover.style.display = 'none'; }
     const extraBlock = document.getElementById('detailExtraBlock');
     if (d.extra) {
       document.getElementById('detailExtra').innerHTML = L(d.extra);
